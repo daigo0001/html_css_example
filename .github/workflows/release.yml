@@ -30,6 +30,11 @@ jobs:
     outputs:
       tag: ${{ steps.version.outputs.tag }}
     steps:
+      - name: Require main for manual version updates
+        if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main'
+        run: |
+          echo 'Select main in Run workflow before starting a version update.' >&2
+          exit 1
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.ref }}

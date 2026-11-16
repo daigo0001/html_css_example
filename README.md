@@ -43,20 +43,20 @@ npm run build       # 公開用ファイルを _site/ に出力
 
 ## GitHub Pagesとワークフロー
 
-最初の一度だけ、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にしてください。Actionsが無効なら有効化し、`github-pages` 環境の保護ルールで `main` とリリース用の `v*` タグからのデプロイを許可してください。通常の `GITHUB_TOKEN` はPages自体の初回有効化を行う権限を持たないため、この設定が必要です。
+最初の一度だけ、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にしてください。Actionsが無効なら有効化し、`github-pages` 環境の保護ルールで `main` からのデプロイを許可してください。タグから直接公開する設定は不要です。通常の `GITHUB_TOKEN` はPages自体の初回有効化を行う権限を持たないため、この設定が必要です。
 
 | ワークフロー | 実行タイミング | 内容 |
 | --- | --- | --- |
 | [Pages](.github/workflows/pages.yml) | `main` へのpush / 手動実行 | データ検証 → PC・スマホのブラウザーテスト → 静的ビルド → Pagesデプロイ |
 | Pages | `main` 宛てのPR | 検証・ビルドのみ。公開はしない |
-| [Version](.github/workflows/release.yml) | `v*` タグのpush | タグとpackageのバージョン・main履歴を照合 → テスト・デプロイ |
+| [Version](.github/workflows/release.yml) | `v*` タグのpush | タグとpackageのバージョン・main履歴を照合 → テスト・ビルド。公開はmain更新時に実行 |
 | Version | Actionsから手動実行 | patch / minor / major を選択 → mainのpackage・lockfileを更新・コミット → タグ → テスト・デプロイ |
 
 README上部のバッジから直近のワークフロー結果を確認できます。ブラウザーテストのHTMLレポートはActionsのArtifactsに14日間保存します。
 
 ### バージョニングとリリース
 
-安定版はSemVerの `vMAJOR.MINOR.PATCH`。初版は `v1.0.0` です。基本は **Actions → Version → Run workflow** で `patch`（修正）、`minor`（追加）、`major`（破壊的変更）を選びます。実行元の選択にかかわらず、バージョン更新の対象はmainです。
+安定版はSemVerの `vMAJOR.MINOR.PATCH`。初版は `v1.0.0` です。基本は **Actions → Version → Run workflow** でブランチを `main` にし、`patch`（修正）、`minor`（追加）、`major`（破壊的変更）を選びます。バージョン更新と公開の対象はmainです。
 
 手元で準備してタグをpushする場合：
 
