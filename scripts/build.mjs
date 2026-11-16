@@ -11,6 +11,6 @@ for (const path of ['index.html', '404.html', 'robots.txt', 'sitemap.xml', 'asse
   await cp(join(root, path), join(output, path), { recursive: true });
 }
 const index = await readFile(join(output, 'index.html'), 'utf8');
-await writeFile(join(output, 'index.html'), index.replaceAll('v1.0.0', `v${pkg.version}`));
+await writeFile(join(output, 'index.html'), index.replace(/(<span id="app-version"[^>]*>)v\d+\.\d+\.\d+(<\/span>)/, `$1v${pkg.version}$2`));
 await writeFile(join(output, '.nojekyll'), '');
 console.log(`Web Notes v${pkg.version} を _site/ にビルドしました。`);

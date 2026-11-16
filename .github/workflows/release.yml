@@ -1,5 +1,5 @@
-name: Release
-run-name: ${{ github.event_name == 'workflow_dispatch' && format('Release · {0}', inputs.bump) || format('Release · {0}', github.ref_name) }}
+name: Version
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Version · {0}', inputs.bump) || format('Version · {0}', github.ref_name) }}
 
 on:
   push:
@@ -77,29 +77,3 @@ jobs:
     uses: ./.github/workflows/pages.yml
     with:
       ref: ${{ needs.prepare.outputs.tag }}
-
-  release:
-    name: Publish GitHub Release
-    needs: [prepare, validate-and-deploy]
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ needs.prepare.outputs.tag }}
-          fetch-depth: 0
-      - name: Download the tested Pages artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: release-artifact
-      - name: Create release with generated notes and the static site
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ needs.prepare.outputs.tag }}
-        run: |
-          if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "Release $TAG already exists"
-          else
-            gh release create "$TAG" release-artifact/artifact.tar --verify-tag --generate-notes --title "Web Notes $TAG"
-          fi

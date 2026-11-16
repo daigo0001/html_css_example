@@ -20,6 +20,7 @@ let toastTimer;
 const mobileQuery = matchMedia('(max-width: 720px)');
 
 hydrateIcons();
+setupTheme();
 $('#all-count').textContent = cards.length;
 $('#html-count').textContent = cards.filter(card => card.type === 'html').length;
 $('#css-count').textContent = cards.filter(card => card.type === 'css').length;
@@ -30,6 +31,39 @@ function readBookmarks() {
     const value = JSON.parse(localStorage.getItem(storageKey) || '[]');
     return new Set(Array.isArray(value) ? value.filter(id => cardById.has(id)) : []);
   } catch { return new Set(); }
+}
+
+function setupTheme() {
+  const key = 'web-notes:theme:v1';
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  const button = $('#theme-toggle');
+  function readPreference() {
+    try {
+      const value = localStorage.getItem(key);
+      return ['light', 'dark'].includes(value) ? value : null;
+    } catch { return null; }
+  }
+  let preference = readPreference();
+  function apply(theme) {
+    const dark = theme === 'dark';
+    document.documentElement.dataset.theme = theme;
+    $('meta[name="theme-color"]').content = dark ? '#111a16' : '#f7f8f4';
+    button.setAttribute('aria-checked', dark);
+    button.title = `${dark ? 'ライト' : 'ダーク'}モードに切り替える`;
+    button.innerHTML = `${icon(dark ? 'moon' : 'sun')}<span class="theme-label">${dark ? 'ダーク' : 'ライト'}</span>`;
+  }
+  apply(document.documentElement.dataset.theme || (system.matches ? 'dark' : 'light'));
+  button.addEventListener('click', () => {
+    preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    apply(preference);
+    try { localStorage.setItem(key, preference); } catch { toast('テーマを切り替えましたが、ブラウザーへの保存はできませんでした。'); }
+  });
+  system.addEventListener('change', event => { if (!preference) apply(event.matches ? 'dark' : 'light'); });
+  window.addEventListener('storage', event => {
+    if (event.key !== key && event.key !== null) return;
+    preference = readPreference();
+    apply(preference || (system.matches ? 'dark' : 'light'));
+  });
 }
 
 function toast(message) {

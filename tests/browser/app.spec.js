@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { cards } from '../../assets/catalog.js';
+import { readFileSync } from 'node:fs';
+
+const { version } = JSON.parse(readFileSync(new URL('../../package.json', import.meta.url), 'utf8'));
 
 async function ready(page, path = './') {
   await page.goto(path);
@@ -159,4 +162,55 @@ test('標準のdialogとpopoverをプレビュー内で操作できる', async (
   await preview.getByRole('button', { name: 'ヒントを見る' }).click();
   await expect(preview.locator('[popover]')).toBeVisible();
   await expect(preview.locator('[popover]')).toContainText('小さく試す');
+});
+
+test('OSのテーマに追従し、手動選択は再読み込みとOS変更の後も優先される', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await ready(page);
+  const theme = page.getByRole('switch', { name: 'ダークモード', exact: true });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(theme).toHaveAttribute('aria-checked', 'true');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await theme.click();
+  await expect(page.locator('.card').first()).toHaveCSS('background-color', 'rgb(27, 40, 32)');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await theme.click();
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await expect(theme).toHaveAttribute('aria-checked', 'false');
+  await expect(page.locator('.card').first()).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+});
+
+test('テーマ変更後も検索とコード編集が動き、利用者向けリンクとバージョンが整理されている', async ({ page }) => {
+  await ready(page);
+  await page.locator('#theme-toggle').click();
+  await page.locator('#search').fill('border-radius');
+  await expect(page.locator('.card')).toHaveCount(1);
+  await page.locator('.try-button').click();
+  await expect(page.locator('#code-editor')).toHaveCSS('background-color', 'rgb(27, 40, 32)');
+  await page.getByRole('tab', { name: 'HTML', exact: true }).click();
+  await page.locator('#code-editor').fill('<p>テーマを変えて実験</p>');
+  await expect(page.frameLocator('#live-preview').locator('p')).toHaveText('テーマを変えて実験');
+  await page.locator('#close-playground').click();
+  await expect(page.locator('#search')).toHaveValue('border-radius');
+  await expect(page.locator('a[href*="github.com/daigo0001"]')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'リリースノート' })).toHaveCount(0);
+  await expect(page.locator('footer #app-version')).toHaveText(`v${version}`);
+  await expect(page.locator('footer #app-version')).toBeVisible();
+});
+
+test('ブラウザーへの保存が禁止されていてもテーマ切り替えを使える', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Storage blocked', 'SecurityError'); } });
+  });
+  await ready(page);
+  await page.locator('#theme-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('#toast')).toContainText('保存はできませんでした');
+  expect(errors).toEqual([]);
 });

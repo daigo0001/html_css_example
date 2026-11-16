@@ -1,0 +1,74 @@
+/* サンプルは独立した文書で描画するため、このテーマはアプリのUIに適用する。 */
+.theme-toggle { min-height: 32px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; }
+.theme-toggle:hover { background: #eaf0e1; }
+.theme-toggle .icon { width: 16px; height: 16px; }
+.footer .version { display: inline-block; font-size: 10px; white-space: nowrap; }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111a16;
+  --paper: #1b2820;
+  --ink: #e0e9dc;
+  --muted: #a9b7a0;
+  --line: #354437;
+  --green: #bfd69c;
+  --sidebar: #14231b;
+  --theme-accent: #c4dca6;
+  --theme-soft: #263b28;
+  --theme-hover: #304735;
+}
+[data-theme="dark"] :is(.card, .search-box, .outline-button, dialog, #code-editor, .art-note) { background: var(--paper); border-color: var(--line); color: var(--ink); }
+[data-theme="dark"] :is(.card:hover, .outline-button:hover) { border-color: #7e9965; }
+[data-theme="dark"] :is(.hero-copy > p, .card-description, .card-category, .hero-foot, .section-hint, .section-kicker, .eyebrow, .breadcrumb, .quiet-button, .results-row, .preview-hint, .since, .load-more-wrap p, .footer, .experiment-intro, .editor-note, .preview-toolbar, .about-dialog p, .how-to li, .about-dialog .about-small, .card-guide p, .card-guide .support-note, .browser-cell span) { color: var(--muted); }
+[data-theme="dark"] :is(.breadcrumb strong, .results-row strong, .search-box input, .select-filters select, .select-filters label) { color: var(--ink); }
+[data-theme="dark"] :is(.hero h1 span, .text-button, .footer-brand, .card-title button:hover, .source-link, .card-guide h3 .icon, .browser-cell strong, .how-to b) { color: var(--theme-accent); }
+[data-theme="dark"] .search-box input::placeholder { color: #a1ae96; }
+[data-theme="dark"] .search-box kbd { color: var(--muted); border-color: var(--line); }
+[data-theme="dark"] :is(.total-badge, .type-tabs) { background: #223023; color: var(--theme-accent); }
+[data-theme="dark"] .type-tab { color: #acba9f; }
+[data-theme="dark"] .type-tab.active { background: #3a4c31; color: #e2edce; }
+[data-theme="dark"] .type-tab > span:last-child:not(.type-dot) { color: #b9c7a9; }
+[data-theme="dark"] :is(.topbar-divider, .eyebrow-line) { background: #536449; }
+[data-theme="dark"] :is(.sort-filter, .card-info, .dialog-top, .experiment, .editor-toolbar, #code-editor, .editor-preview, .editor-preview iframe, .art-dots) { border-color: var(--line); }
+[data-theme="dark"] :is(.theme-toggle:hover, .outline-button:hover, .icon-button:hover, .details-button:hover) { background: var(--theme-hover); }
+[data-theme="dark"] .card-code::after { background: linear-gradient(transparent, var(--paper)); }
+[data-theme="dark"] :is(.card-code pre, #code-editor) { color: #c7d8b3; }
+[data-theme="dark"] .syntax-tag { color: #e0b48c; }
+[data-theme="dark"] :is(.syntax-prop, .syntax-attr) { color: #c0d98f; }
+[data-theme="dark"] .syntax-string { color: #9dcca1; }
+[data-theme="dark"] .language-label { background: #453326; color: #edc09c; }
+[data-theme="dark"] .language-label.css { background: #2c3e24; color: #c6dcac; }
+[data-theme="dark"] :is(.try-button, .mdn-link, .guide-callout, .learning-note, .browser-cell) { background: var(--theme-soft); border-color: #405438; color: var(--theme-accent); }
+[data-theme="dark"] :is(.try-button:hover, .mdn-link:hover) { background: var(--theme-hover); }
+[data-theme="dark"] :is(.save-card, .details-button, .icon-button) { color: #b5c5a2; }
+[data-theme="dark"] .details-button { border-color: var(--line); }
+[data-theme="dark"] :is(.save-card:hover, .save-card[aria-pressed="true"]) { color: #d7e7b6; background: #334a2b; }
+[data-theme="dark"] .save-card[aria-pressed="true"] .icon { fill: #546b37; }
+[data-theme="dark"] .status-label { color: #bdd797; }
+[data-theme="dark"] .status-label.recent { color: #a9c6e7; }
+[data-theme="dark"] :is(.status-label.limited, .browser-cell.unknown strong) { color: #e2c68e; }
+[data-theme="dark"] .status-label.deprecated { color: #e7b199; }
+[data-theme="dark"] .learning-note p { color: var(--muted); }
+[data-theme="dark"] .note-icon { background: #3b522c; color: #c5dca5; }
+[data-theme="dark"] .empty-state { border-color: #526744; background: #1b282080; }
+[data-theme="dark"] .empty-state p { color: var(--muted); }
+[data-theme="dark"] .primary-button { background: #d1e6ae; color: #24341d; }
+[data-theme="dark"] .experiment { background: #152219; }
+[data-theme="dark"] .editor-toolbar { background: #243425; }
+[data-theme="dark"] .editor-tabs button { color: #a4b892; }
+[data-theme="dark"] .editor-tabs button[aria-selected="true"] { color: #d4e5b6; border-color: #b0ca87; }
+[data-theme="dark"] .preview-toolbar select { background: var(--paper); color: var(--ink); border-color: var(--line); }
+[data-theme="dark"] .editor-preview { background: repeating-conic-gradient(#1a291e 0 25%, #202f22 0 50%) 0 0/16px 16px; }
+[data-theme="dark"] .art-code code { color: #b1c09c; }
+[data-theme="dark"] .art-code code span { color: #dbb494; }
+[data-theme="dark"] .art-code code b { color: #bdd68b; }
+[data-theme="dark"] :is(.art-caption, .art-result-foot) { color: #b1c09c; }
+[data-theme="dark"] .notice { background: #413822; }
+[data-theme="dark"] .skip-link { background: var(--paper); }
+[data-theme="dark"] dialog::backdrop { background: #071009df; }
+[data-theme="dark"] .toast { background: #d1e5b3; color: #24351d; }
+
+@media (max-width: 440px) {
+  .topbar-actions .theme-toggle { min-width: 34px; padding: 7px; }
+  .topbar-actions .theme-label { display: none; }
+}
