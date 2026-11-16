@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import bcd from '@mdn/browser-compat-data' with { type: 'json' };
+import { Script } from 'node:vm';
 import { cards, categories } from '../assets/catalog.js';
 
 const compatibility = JSON.parse(await readFile(new URL('../assets/compatibility.json', import.meta.url)));
@@ -12,11 +13,17 @@ test('全カードに一意のID、分類、説明、実行例と一次資料が
   for (const card of cards) {
     assert.match(card.id, /^(html|css)-[a-z0-9_-]+$/);
     assert.ok(categories.some(category => category.id === card.category), card.id);
-    for (const key of ['name', 'description', 'usage', 'seo', 'html', 'bcd']) assert.ok(card[key], `${card.id}: ${key}`);
+    for (const key of ['name', 'description', 'usage', 'seo', 'html']) assert.ok(card[key], `${card.id}: ${key}`);
     assert.ok(['html', 'css'].includes(card.type));
+    assert.ok(['element', 'attribute', 'property'].includes(card.kind), card.id);
     assert.equal(new URL(card.mdn).hostname, 'developer.mozilla.org');
-    const feature = card.bcd.split('.').reduce((value, key) => value?.[key], bcd)?.__compat;
-    assert.ok(feature, `無効なBCDキー: ${card.bcd}`);
+    if (card.bcd !== null) {
+      const feature = card.bcd.split('.').reduce((value, key) => value?.[key], bcd)?.__compat;
+      assert.ok(feature, `無効なBCDキー: ${card.bcd}`);
+    } else {
+      assert.equal(card.kind, 'attribute');
+      assert.ok(card.compatReason, `対応版がない理由を明記: ${card.id}`);
+    }
     if (card.type === 'css') assert.ok(card.css);
   }
 });
@@ -26,8 +33,14 @@ test('互換性データは現行カタログとMDNデータに対応し、将�
   assert.deepEqual(Object.keys(compatibility.cards).sort(), cards.map(card => card.id).sort());
   for (const card of cards) {
     const info = compatibility.cards[card.id];
-    assert.ok(['established', 'recent', 'limited', 'deprecated'].includes(info.status));
-    assert.ok(info.source.startsWith('https://github.com/mdn/browser-compat-data/blob/'));
+    assert.ok(['established', 'recent', 'limited', 'deprecated', 'untracked'].includes(info.status));
+    if (card.bcd === null) {
+      assert.equal(info.status, 'untracked', '未収録と未対応を区別する');
+      assert.equal(info.tracked, false);
+      assert.deepEqual(info.support, {}, '反映APIの導入版をARIA属性の対応版に流用しない');
+      assert.equal(info.source, card.mdn);
+      assert.ok(info.supportNote);
+    } else assert.ok(info.source.startsWith('https://github.com/mdn/browser-compat-data/blob/'));
     assert.ok(!info.source.endsWith('undefined'));
     assert.ok(!info.since || info.since <= compatibility.checkedAt);
     if (card.legacy) assert.equal(info.status, 'deprecated');
@@ -46,5 +59,12 @@ test('実行例には外部依存やスクリプトがなく、ローカル画�
       await readFile(new URL(`../${match[1]}`, import.meta.url));
     }
     assert.doesNotMatch(card.css, /@import|url\(\s*["']?https?:/i);
+  }
+});
+
+test('参考JavaScriptは構文として有効で、実行せずに掲載できる', () => {
+  for (const card of cards.filter(card => card.js)) {
+    assert.equal(typeof card.js, 'string');
+    assert.doesNotThrow(() => new Script(card.js, { filename: `${card.id}.js` }));
   }
 });

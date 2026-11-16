@@ -46,6 +46,8 @@
 [data-theme="dark"] .save-card[aria-pressed="true"] .icon { fill: #546b37; }
 [data-theme="dark"] .status-label { color: #bdd797; }
 [data-theme="dark"] .status-label.recent { color: #a9c6e7; }
+[data-theme="dark"] .status-label.untracked { color: #a9c6e7; }
+[data-theme="dark"] .reference-code pre { background: #142117; color: #c4d7ae; border-color: var(--line); }
 [data-theme="dark"] :is(.status-label.limited, .browser-cell.unknown strong) { color: #e2c68e; }
 [data-theme="dark"] .status-label.deprecated { color: #e7b199; }
 [data-theme="dark"] .learning-note p { color: var(--muted); }

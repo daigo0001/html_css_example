@@ -7,6 +7,11 @@ const browsers = ['chrome', 'edge', 'firefox', 'safari', 'chrome_android', 'safa
 const records = {};
 
 for (const card of cards) {
+  if (card.bcd === null) {
+    if (!card.compatReason) throw new Error(`対応データなしの理由が必要です: ${card.id}`);
+    records[card.id] = { status: 'untracked', tracked: false, since: null, approximate: false, support: {}, source: card.mdn, supportNote: card.compatReason, experimental: false, spec: null };
+    continue;
+  }
   const feature = card.bcd.split('.').reduce((value, key) => value?.[key], bcd)?.__compat;
   if (!feature) throw new Error(`BCDのキーが見つかりません: ${card.bcd}`);
   const support = {};
@@ -31,7 +36,7 @@ for (const card of cards) {
   cutoff.setUTCMonth(cutoff.getUTCMonth() - 30);
   const status = card.legacy || feature.status?.deprecated ? 'deprecated' : !allSupported ? 'limited' : new Date(since) > cutoff ? 'recent' : 'established';
   records[card.id] = {
-    status, since, approximate: desktop.some(browser => browser.approximate), support,
+    status, tracked: true, since, approximate: desktop.some(browser => browser.approximate), support,
     experimental: feature.status?.experimental ?? false,
     source: `https://github.com/mdn/browser-compat-data/blob/v${bcd.__meta.version}/${feature.source_file}`,
     spec: [feature.spec_url].flat()[0] ?? null,
@@ -40,7 +45,7 @@ for (const card of cards) {
 
 await writeFile(new URL('../assets/compatibility.json', import.meta.url), JSON.stringify({
   source: 'MDN browser-compat-data', version: bcd.__meta.version, checkedAt,
-  methodology: '接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。',
+  methodology: '接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。ARIAなど属性自体の導入版がBCDにない項目は「版数未収録」と表示し、未対応とは区別する。',
   cards: records,
 }, null, 2) + '\n');
 console.log(`${cards.length}件の互換性情報を MDN BCD ${bcd.__meta.version} から生成しました (${checkedAt})`);

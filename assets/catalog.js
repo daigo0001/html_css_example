@@ -1,28 +1,19 @@
+import { h, c } from './card-helpers.js';
+import { extraElements } from './html-elements.js';
+import { attributes } from './html-attributes.js';
+
 // 説明と実行可能な最小例。互換性は scripts/compat.mjs で MDN BCD から生成する。
 export const categories = [
   { id: 'all', label: 'すべて', icon: 'grid' },
   { id: 'structure', label: '文書・セマンティクス', icon: 'file' },
   { id: 'text', label: 'テキスト・装飾', icon: 'type' },
   { id: 'layout', label: 'レイアウト', icon: 'layout' },
+  { id: 'attributes', label: '属性・データ', icon: 'sliders' },
   { id: 'forms', label: 'フォーム・操作', icon: 'cursor' },
   { id: 'media', label: '画像・メディア', icon: 'image' },
   { id: 'motion', label: '動き・演出', icon: 'sparkles' },
 ];
 
-const h = (id, name, category, description, html, options = {}) => ({
-  id: `html-${id}`, name: `<${name}>`, type: 'html', category, description,
-  html, css: '', bcd: `html.elements.${id}`, mdn: `https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/${id}`,
-  usage: description,
-  seo: 'この要素だけで検索順位が上がるわけではありません。内容に合った要素を選び、読み手と支援技術に意味を伝えましょう。',
-  note: '', ...options,
-});
-const c = (id, name, category, description, html, css, options = {}) => ({
-  id: `css-${id}`, name, type: 'css', category, description, html, css,
-  bcd: `css.properties.${id}`, mdn: `https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/${id}`,
-  usage: description,
-  seo: 'CSSの指定そのものに直接の検索順位向上効果はありません。読みやすさ、操作性、レイアウトの安定性に配慮しましょう。',
-  note: '', ...options,
-});
 const blocks = '<div class="boxes"><span>01</span><span>02</span><span>03</span></div>';
 const boxStyle = '.boxes span { display: grid; place-items: center; min-height: 42px; padding: 10px; background: #e6efde; border: 1px solid #cadbbd; border-radius: 8px; color: #31523e; font-weight: 700; }';
 
@@ -426,13 +417,9 @@ export const cards = [
       seo: 'description は検索スニペットの候補ですが、そのまま使われる保証はなく、直接の順位シグナルとも限りません。meta keywords へのキーワード列挙はGoogle検索で順位に利用されません。',
       note: 'この図鑑はプレビュー内のmetaを安全のため除去します。metaの配置・内容はコードで確認してください。画面上の本文を装飾する要素ではありません。',
     }),
-  h('popover', 'popover', 'forms', 'ボタンで開閉できる、ちょっとした補足。JavaScriptなしのポップオーバー。',
-    '<button popovertarget="tip">ヒントを見る</button>\n<div id="tip" popover>\n  小さく試すのが、いちばんの近道。\n</div>', {
-      name: 'popover 属性', bcd: 'html.global_attributes.popover', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Global_attributes/popover',
-      css: '[popover] { inset: auto 12px 8px; margin: 0; padding: 12px; max-width: 260px; border: 1px solid #c6d8b3; border-radius: 10px; background: #f8fbef; color: #4d663b; font-size: 12px; }',
-      usage: 'popover 属性で要素をポップオーバーにし、button の popovertarget にそのidを指定します。外側のクリックやEscapeで閉じられます。dialogとは異なりモーダルにはしません。',
-      note: 'ボタンを押して試せます。カードの埋め込みプレビュー内に表示されます。要素名ではなくグローバル属性です。',
-    }),
+
+  ...extraElements,
+  ...attributes,
 ];
 
 export const cardById = new Map(cards.map(card => [card.id, card]));

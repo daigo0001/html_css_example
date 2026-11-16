@@ -122,11 +122,20 @@ test('キーボードで検索・タブ切替・モーダル終了を操作で�
   await expect(open).toBeFocused();
 });
 
-test('全カードを表示でき、並び替え・説明・不正な保存データにも対応する', async ({ page }) => {
-  await page.addInitScript(() => localStorage.setItem('web-notes:bookmarks:v1', '{broken json'));
+test('150枚のカタログを最後まで読み込め、重複や欠落がない', async ({ page }) => {
+  // 通常の12枚表示とは異なり、全150枚の独立したプレビューを順に開く。
+  test.setTimeout(60_000);
   await ready(page);
   while (await page.locator('#load-more').isVisible()) await page.locator('#load-more').click();
   await expect(page.locator('.card')).toHaveCount(cards.length);
+  const visibleIds = await page.locator('.card').evaluateAll(nodes => nodes.map(node => node.dataset.card));
+  expect(visibleIds.sort()).toEqual(cards.map(card => card.id).sort());
+  await expect(page.locator('#load-progress')).toHaveText(`${cards.length} / ${cards.length} cards`);
+});
+
+test('並び替え・説明・不正な保存データに対応する', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('web-notes:bookmarks:v1', '{broken json'));
+  await ready(page);
   await page.locator('#sort').selectOption('newest');
   await expect(page.locator('.card').first().locator('.status-label')).not.toHaveClass(/deprecated/);
   await page.locator('#about-button').click();
@@ -213,4 +222,71 @@ test('ブラウザーへの保存が禁止されていてもテーマ切り替�
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await expect(page.locator('#toast')).toContainText('保存はできませんでした');
   expect(errors).toEqual([]);
+});
+
+test('HTML属性を絞り込んで共有でき、data-*の編集と参考コードの確認ができる', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await ready(page);
+  await page.locator('[data-type="attribute"]').click();
+  await expect(page.locator('#result-count')).toContainText(String(cards.filter(card => card.kind === 'attribute').length));
+  await page.locator('#search').fill('data-product-id');
+  await expect(page.locator('.card')).toHaveCount(1);
+  await page.reload();
+  await expect(page.locator('[data-type="attribute"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.card-title')).toHaveText('data-*');
+  await page.locator('.try-button').click();
+  await expect(page.locator('#dialog-type')).toHaveText('HTML属性');
+  await expect(page.locator('#guide-js')).toContainText('dataset.productId');
+  const product = page.frameLocator('#live-preview').locator('.product');
+  await expect(product).toHaveAttribute('data-state', 'ready');
+  await page.locator('#code-editor').fill('<article class="product" data-product-id="note-77" data-state="busy">編集中のノート</article>');
+  await expect(product).toHaveCSS('background-color', 'rgb(245, 230, 207)');
+  expect(await product.evaluate(el => getComputedStyle(el, '::after').content)).toContain('note-77');
+  await page.locator('#copy-reference').click();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toContain('dataset.productId');
+});
+
+test('真偽値・読み取り専用・ラベル関連付け・patternはブラウザー標準で動く', async ({ page }) => {
+  await ready(page, './?item=html-attr-disabled');
+  await expect(page.frameLocator('#live-preview').getByRole('button', { name: 'これも無効' })).toBeDisabled();
+  await ready(page, './?item=html-attr-readonly');
+  await expect(page.frameLocator('#live-preview').getByLabel('受付番号')).not.toBeEditable();
+  await ready(page, './?item=html-attr-for');
+  await page.frameLocator('#live-preview').getByText('この文章もクリックできます').click();
+  await expect(page.frameLocator('#live-preview').getByRole('checkbox')).toBeChecked();
+  await ready(page, './?item=html-attr-pattern');
+  const input = page.frameLocator('#live-preview').getByLabel('商品コード（英大文字2字＋数字3桁）');
+  await input.fill('abc');
+  expect(await input.evaluate(el => el.checkValidity())).toBe(false);
+  await input.fill('AB123');
+  expect(await input.evaluate(el => el.checkValidity())).toBe(true);
+});
+
+test('ARIAのアクセシブルな名前を確認でき、未収録の導入版を未対応と誤表示しない', async ({ page }) => {
+  await ready(page, './?item=html-attr-aria-label');
+  await expect(page.frameLocator('#live-preview').getByRole('button', { name: '検索', exact: true })).toHaveText('⌕');
+  await expect(page.locator('#guide-status')).toContainText('版数未収録');
+  await expect(page.locator('#browser-support')).toBeHidden();
+  await expect(page.locator('#support-note')).toContainText('反映API');
+  await page.locator('#close-playground').click();
+  await page.locator('[data-type="attribute"]').click();
+  await page.locator('#status-filter').selectOption('untracked');
+  await expect(page.locator('.card')).toHaveCount(cards.filter(card => card.bcd === null).length);
+  await page.locator('.card').first().locator('.try-button').click();
+  await expect(page.locator('#compat-source')).toHaveAttribute('href', /developer\.mozilla\.org/);
+});
+
+test('追加したdata要素・fieldset・contenteditableの実例を操作できる', async ({ page }) => {
+  await ready(page, './?item=html-data');
+  await expect(page.locator('#dialog-type')).toHaveText('HTML');
+  const data = page.frameLocator('#live-preview').locator('data');
+  await expect(data).toHaveText('森のノート');
+  expect(await data.evaluate(el => el.value)).toBe('SKU-042');
+  await ready(page, './?item=html-fieldset');
+  const frame = page.frameLocator('#live-preview');
+  await frame.getByRole('radio', { name: '小さめ' }).check();
+  await expect(frame.getByRole('radio', { name: '広め' })).not.toBeChecked();
+  await ready(page, './?item=html-attr-contenteditable');
+  await frame.getByLabel('編集できるメモ').fill('小さな発見を追加！');
+  await expect(frame.getByLabel('編集できるメモ')).toHaveText('小さな発見を追加！');
 });

@@ -6,7 +6,7 @@ const $$ = selector => [...document.querySelectorAll(selector)];
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const storageKey = 'web-notes:bookmarks:v1';
 const pageSize = 12;
-const statusLabels = { established: '安定対応', recent: '新しく対応', limited: '一部対応・要確認', deprecated: '非推奨・廃止' };
+const statusLabels = { established: '安定対応', recent: '新しく対応', limited: '一部対応・要確認', deprecated: '非推奨・廃止', untracked: '版数未収録' };
 const browserLabels = { chrome: 'Chrome', edge: 'Edge', firefox: 'Firefox', safari: 'Safari', chrome_android: 'Chrome Android', safari_ios: 'Safari iOS' };
 const state = { q: '', type: 'all', category: 'all', status: 'all', sort: 'recommended', view: 'all', limit: pageSize };
 let compatibility;
@@ -22,7 +22,8 @@ const mobileQuery = matchMedia('(max-width: 720px)');
 hydrateIcons();
 setupTheme();
 $('#all-count').textContent = cards.length;
-$('#html-count').textContent = cards.filter(card => card.type === 'html').length;
+$('#html-count').textContent = cards.filter(card => card.type === 'html' && card.kind !== 'attribute').length;
+$('#attribute-count').textContent = cards.filter(card => card.kind === 'attribute').length;
 $('#css-count').textContent = cards.filter(card => card.type === 'css').length;
 $('#category-nav').innerHTML = categories.filter(category => category.id !== 'all').map(category => `<button class="category-button" data-category="${category.id}" aria-pressed="false">${icon(category.icon)}${category.label}<span class="category-count">${cards.filter(card => card.category === category.id).length}</span></button>`).join('');
 
@@ -87,7 +88,7 @@ function syncUrl() {
 function readUrl() {
   const params = new URL(location.href).searchParams;
   state.q = params.get('q') || '';
-  state.type = ['html', 'css'].includes(params.get('type')) ? params.get('type') : 'all';
+  state.type = ['html', 'css', 'attribute'].includes(params.get('type')) ? params.get('type') : 'all';
   state.category = categories.some(category => category.id === params.get('category')) ? params.get('category') : 'all';
   state.status = Object.hasOwn(statusLabels, params.get('status')) ? params.get('status') : 'all';
   state.sort = ['name', 'newest'].includes(params.get('sort')) ? params.get('sort') : 'recommended';
@@ -101,8 +102,9 @@ const normalize = text => text.normalize('NFKC').toLocaleLowerCase('ja').replace
 export function matchingCards() {
   const terms = normalize(state.q).trim().split(/\s+/).filter(Boolean);
   return cards.filter(card => {
-    const content = normalize([card.name, card.id, card.description, card.usage, card.seo, card.note, card.type, categories.find(category => category.id === card.category)?.label].join(' '));
-    return (state.type === 'all' || card.type === state.type)
+    const content = normalize([card.name, card.id, card.description, card.usage, card.seo, card.note, card.type, card.js || '', card.kind === 'attribute' ? '属性' : '', categories.find(category => category.id === card.category)?.label].join(' '));
+    const filterType = card.kind === 'attribute' ? 'attribute' : card.type;
+    return (state.type === 'all' || filterType === state.type)
       && (state.category === 'all' || card.category === state.category)
       && (state.status === 'all' || compatibility.cards[card.id].status === state.status)
       && (state.view === 'all' || bookmarks.has(card.id))
@@ -117,13 +119,13 @@ function highlight(code, type) {
 
 function statusMarkup(card) {
   const info = compatibility.cards[card.id];
-  return `<span class="status-label ${info.status}" title="${escape(compatibility.methodology)}">${statusLabels[info.status]}</span><span class="since" title="標準化や誕生の年ではなく、主要4デスクトップブラウザーで対応が揃った時期">${info.since ? `${info.approximate ? '〜' : ''}${info.since.slice(0, 7).replace('-', '.')}${info.approximate ? 'までに' : '〜'}` : '詳細を確認'}${info.status === 'deprecated' ? ' / 使用非推奨' : ''}</span>`;
+  return `<span class="status-label ${info.status}" title="${escape(info.supportNote || compatibility.methodology)}">${statusLabels[info.status]}</span><span class="since" title="標準化や誕生の年ではなく、主要4デスクトップブラウザーで対応が揃った時期">${info.since ? `${info.approximate ? '〜' : ''}${info.since.slice(0, 7).replace('-', '.')}${info.approximate ? 'までに' : '〜'}` : info.status === 'untracked' ? '支援技術で確認' : '詳細を確認'}${info.status === 'deprecated' ? ' / 使用非推奨' : ''}</span>`;
 }
 
 function cardMarkup(card) {
   const saved = bookmarks.has(card.id);
   const code = card.type === 'html' ? card.html : card.css;
-  return `<article class="card" data-card="${card.id}"><div class="card-header"><div class="card-meta"><span class="language-label ${card.type}">${card.type.toUpperCase()}</span><span class="card-category">${categories.find(category => category.id === card.category).label}</span><button class="save-card" data-save="${card.id}" aria-label="${escape(card.name)}を${saved ? 'コレクションから外す' : 'コレクションに保存'}" aria-pressed="${saved}">${icon('bookmark')}</button></div><h3 class="card-title"><button data-open="${card.id}">${escape(card.name)}</button></h3><p class="card-description">${escape(card.description)}</p></div><div class="card-preview"><iframe title="${escape(card.name)}の実際の表示" loading="lazy" sandbox="allow-forms" referrerpolicy="no-referrer" data-preview="${card.id}"></iframe></div><div class="card-code"><pre><code>${highlight(code, card.type)}</code></pre></div><div class="card-info">${statusMarkup(card)}</div><div class="card-footer"><button class="try-button" data-open="${card.id}">${icon('code')}コードを試す</button><button class="details-button" data-open="${card.id}" aria-label="${escape(card.name)}の説明と対応情報">${icon('arrow-up-right')}</button></div></article>`;
+  return `<article class="card" data-card="${card.id}"><div class="card-header"><div class="card-meta"><span class="language-label ${card.type}">${card.kind === 'attribute' ? 'HTML属性' : card.type.toUpperCase()}</span><span class="card-category">${categories.find(category => category.id === card.category).label}</span><button class="save-card" data-save="${card.id}" aria-label="${escape(card.name)}を${saved ? 'コレクションから外す' : 'コレクションに保存'}" aria-pressed="${saved}">${icon('bookmark')}</button></div><h3 class="card-title"><button data-open="${card.id}">${escape(card.name)}</button></h3><p class="card-description">${escape(card.description)}</p></div><div class="card-preview"><iframe title="${escape(card.name)}の実際の表示" loading="lazy" sandbox="allow-forms" referrerpolicy="no-referrer" data-preview="${card.id}"></iframe></div><div class="card-code"><pre><code>${highlight(code, card.type)}</code></pre></div><div class="card-info">${statusMarkup(card)}</div><div class="card-footer"><button class="try-button" data-open="${card.id}">${icon('code')}コードを試す</button><button class="details-button" data-open="${card.id}" aria-label="${escape(card.name)}の説明と対応情報">${icon('arrow-up-right')}</button></div></article>`;
 }
 
 // template 内は不活性。貼り付けたHTMLをアプリのDOMに実行可能な状態で挿入しない。
@@ -244,17 +246,22 @@ function openCard(id, trigger = document.activeElement) {
   triggerElement = trigger;
   draft = { html: card.html, css: card.css };
   $('#playground-title').textContent = card.name;
-  $('#dialog-type').textContent = card.type.toUpperCase();
+  $('#dialog-type').textContent = card.kind === 'attribute' ? 'HTML属性' : card.type.toUpperCase();
   $('#dialog-type').className = `language-label ${card.type}`;
   $('#guide-usage').textContent = card.usage;
+  $('#guide-js').textContent = card.js || '';
+  $('#guide-js-wrap').hidden = !card.js;
   $('#guide-seo').textContent = card.seo;
   $('#guide-note').textContent = card.note;
   $('#guide-note-wrap').hidden = !card.note;
   $('#mdn-link').href = card.mdn;
   $('#guide-status').innerHTML = statusMarkup(card);
   const info = compatibility.cards[card.id];
+  $('#browser-support').hidden = info.tracked === false;
+  $('#support-note').textContent = info.supportNote || '接頭辞・フラグ・部分対応を除いた開始版。サブ機能や古いOSには差があります。';
   $('#browser-support').innerHTML = Object.entries(info.support).map(([name, value]) => `<div class="browser-cell ${value.version ? '' : 'unknown'}"><span>${browserLabels[name]}</span><strong>${value.version ? `${escape(value.version)}+` : '要確認'}</strong></div>`).join('');
   $('#compat-source').href = info.source;
+  $('#compat-source').innerHTML = `${info.tracked === false ? 'MDNで属性の仕様を確認' : 'MDNの対応データ'} ${icon('arrow-up-right')}`;
   $('#preview-width').value = '100%';
   $('#live-preview').style.width = '100%';
   setEditor(card.type);
@@ -386,6 +393,7 @@ function setupEvents() {
     toast('最初のコードに戻しました。');
   });
   $('#copy-code').addEventListener('click', () => copy(draft[editing], `${editing.toUpperCase()}をコピーしました。`));
+  $('#copy-reference').addEventListener('click', () => copy(activeCard.js, '参考JavaScriptをコピーしました。'));
   $('#share-card').addEventListener('click', () => {
     const url = new URL('./', location.href);
     url.searchParams.set('item', activeCard.id);

@@ -2,10 +2,11 @@
   "source": "MDN browser-compat-data",
   "version": "8.1.9",
   "checkedAt": "2026-11-16",
-  "methodology": "接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。",
+  "methodology": "接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。ARIAなど属性自体の導入版がBCDにない項目は「版数未収録」と表示し、未対応とは区別する。",
   "cards": {
     "html-details": {
       "status": "established",
+      "tracked": true,
       "since": "2020-01-15",
       "approximate": false,
       "support": {
@@ -46,6 +47,7 @@
     },
     "css-grid-template-columns": {
       "status": "established",
+      "tracked": true,
       "since": "2017-10-17",
       "approximate": false,
       "support": {
@@ -86,6 +88,7 @@
     },
     "css-border-radius": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -126,6 +129,7 @@
     },
     "html-dialog": {
       "status": "established",
+      "tracked": true,
       "since": "2022-03-14",
       "approximate": false,
       "support": {
@@ -166,6 +170,7 @@
     },
     "css-text-wrap": {
       "status": "established",
+      "tracked": true,
       "since": "2024-05-13",
       "approximate": false,
       "support": {
@@ -206,6 +211,7 @@
     },
     "html-mark": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -246,6 +252,7 @@
     },
     "html-article": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -286,6 +293,7 @@
     },
     "css-display": {
       "status": "established",
+      "tracked": true,
       "since": "2015-09-30",
       "approximate": false,
       "support": {
@@ -326,6 +334,7 @@
     },
     "html-progress": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -366,6 +375,7 @@
     },
     "css-box-shadow": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -406,6 +416,7 @@
     },
     "css-aspect-ratio": {
       "status": "established",
+      "tracked": true,
       "since": "2021-09-20",
       "approximate": false,
       "support": {
@@ -446,6 +457,7 @@
     },
     "html-center": {
       "status": "deprecated",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -486,6 +498,7 @@
     },
     "html-section": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -526,6 +539,7 @@
     },
     "html-nav": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -566,6 +580,7 @@
     },
     "html-main": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -606,6 +621,7 @@
     },
     "html-header": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -646,6 +662,7 @@
     },
     "html-heading_elements": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -686,6 +703,7 @@
     },
     "html-p": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -726,6 +744,7 @@
     },
     "html-a": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -766,6 +785,7 @@
     },
     "html-strong": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -806,6 +826,7 @@
     },
     "html-ul": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -846,6 +867,7 @@
     },
     "html-dl": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -886,6 +908,7 @@
     },
     "html-blockquote": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -926,6 +949,7 @@
     },
     "html-code": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -966,6 +990,7 @@
     },
     "html-time": {
       "status": "established",
+      "tracked": true,
       "since": "2017-10-17",
       "approximate": false,
       "support": {
@@ -1006,6 +1031,7 @@
     },
     "html-img": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1046,6 +1072,7 @@
     },
     "html-figure": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1086,6 +1113,7 @@
     },
     "html-picture": {
       "status": "established",
+      "tracked": true,
       "since": "2016-03-21",
       "approximate": false,
       "support": {
@@ -1126,6 +1154,7 @@
     },
     "html-video": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1166,6 +1195,7 @@
     },
     "html-input": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1206,6 +1236,7 @@
     },
     "html-button": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1246,6 +1277,7 @@
     },
     "html-select": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1286,6 +1318,7 @@
     },
     "html-datalist": {
       "status": "established",
+      "tracked": true,
       "since": "2019-03-25",
       "approximate": false,
       "support": {
@@ -1326,6 +1359,7 @@
     },
     "html-meter": {
       "status": "established",
+      "tracked": true,
       "since": "2015-11-12",
       "approximate": false,
       "support": {
@@ -1366,6 +1400,7 @@
     },
     "html-ruby": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1406,6 +1441,7 @@
     },
     "html-table": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1446,6 +1482,7 @@
     },
     "html-font": {
       "status": "deprecated",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -1486,6 +1523,7 @@
     },
     "html-marquee": {
       "status": "deprecated",
+      "tracked": true,
       "since": "2019-01-29",
       "approximate": false,
       "support": {
@@ -1526,6 +1564,7 @@
     },
     "css-gap": {
       "status": "established",
+      "tracked": true,
       "since": "2017-10-17",
       "approximate": false,
       "support": {
@@ -1566,6 +1605,7 @@
     },
     "css-position": {
       "status": "established",
+      "tracked": true,
       "since": "2019-09-19",
       "approximate": false,
       "support": {
@@ -1606,6 +1646,7 @@
     },
     "css-overflow": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1646,6 +1687,7 @@
     },
     "css-object-fit": {
       "status": "established",
+      "tracked": true,
       "since": "2020-01-15",
       "approximate": false,
       "support": {
@@ -1686,6 +1728,7 @@
     },
     "css-clamp": {
       "status": "established",
+      "tracked": true,
       "since": "2020-04-07",
       "approximate": false,
       "support": {
@@ -1726,6 +1769,7 @@
     },
     "css-color": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1766,6 +1810,7 @@
     },
     "css-background-image": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1806,6 +1851,7 @@
     },
     "css-opacity": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -1846,6 +1892,7 @@
     },
     "css-transform": {
       "status": "established",
+      "tracked": true,
       "since": "2015-09-30",
       "approximate": false,
       "support": {
@@ -1886,6 +1933,7 @@
     },
     "css-transition": {
       "status": "established",
+      "tracked": true,
       "since": "2015-09-30",
       "approximate": false,
       "support": {
@@ -1926,6 +1974,7 @@
     },
     "css-animation": {
       "status": "established",
+      "tracked": true,
       "since": "2015-09-30",
       "approximate": false,
       "support": {
@@ -1966,6 +2015,7 @@
     },
     "css-filter": {
       "status": "established",
+      "tracked": true,
       "since": "2016-08-31",
       "approximate": false,
       "support": {
@@ -2006,6 +2056,7 @@
     },
     "css-backdrop-filter": {
       "status": "recent",
+      "tracked": true,
       "since": "2024-09-16",
       "approximate": false,
       "support": {
@@ -2046,6 +2097,7 @@
     },
     "css-float": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2086,6 +2138,7 @@
     },
     "css-box-sizing": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2126,6 +2179,7 @@
     },
     "css-custom-property": {
       "status": "established",
+      "tracked": true,
       "since": "2017-04-05",
       "approximate": false,
       "support": {
@@ -2166,6 +2220,7 @@
     },
     "css-container-type": {
       "status": "established",
+      "tracked": true,
       "since": "2023-02-14",
       "approximate": false,
       "support": {
@@ -2206,6 +2261,7 @@
     },
     "css-has": {
       "status": "established",
+      "tracked": true,
       "since": "2023-12-19",
       "approximate": false,
       "support": {
@@ -2246,6 +2302,7 @@
     },
     "css-subgrid": {
       "status": "established",
+      "tracked": true,
       "since": "2023-09-15",
       "approximate": false,
       "support": {
@@ -2286,6 +2343,7 @@
     },
     "css-color-mix": {
       "status": "established",
+      "tracked": true,
       "since": "2023-05-09",
       "approximate": false,
       "support": {
@@ -2326,6 +2384,7 @@
     },
     "css-accent-color": {
       "status": "recent",
+      "tracked": true,
       "since": "2025-12-12",
       "approximate": false,
       "support": {
@@ -2366,6 +2425,7 @@
     },
     "css-scroll-snap-type": {
       "status": "established",
+      "tracked": true,
       "since": "2022-04-05",
       "approximate": false,
       "support": {
@@ -2406,6 +2466,7 @@
     },
     "css-writing-mode": {
       "status": "established",
+      "tracked": true,
       "since": "2017-03-27",
       "approximate": false,
       "support": {
@@ -2446,6 +2507,7 @@
     },
     "css-margin-inline": {
       "status": "established",
+      "tracked": true,
       "since": "2021-04-26",
       "approximate": false,
       "support": {
@@ -2486,6 +2548,7 @@
     },
     "css-text-overflow": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2526,6 +2589,7 @@
     },
     "css-outline": {
       "status": "established",
+      "tracked": true,
       "since": "2022-03-14",
       "approximate": false,
       "support": {
@@ -2566,6 +2630,7 @@
     },
     "css-nesting": {
       "status": "established",
+      "tracked": true,
       "since": "2023-12-11",
       "approximate": false,
       "support": {
@@ -2606,6 +2671,7 @@
     },
     "css-anchor-name": {
       "status": "recent",
+      "tracked": true,
       "since": "2026-01-13",
       "approximate": false,
       "support": {
@@ -2646,6 +2712,7 @@
     },
     "html-div": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2686,6 +2753,7 @@
     },
     "html-form": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2726,6 +2794,7 @@
     },
     "html-textarea": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": true,
       "support": {
@@ -2766,6 +2835,7 @@
     },
     "html-title": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2806,6 +2876,7 @@
     },
     "html-meta": {
       "status": "established",
+      "tracked": true,
       "since": "2015-07-29",
       "approximate": false,
       "support": {
@@ -2844,8 +2915,2997 @@
       "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/meta.json",
       "spec": "https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"
     },
+    "html-data": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-10-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "62",
+          "date": "2017-10-17",
+          "approximate": false
+        },
+        "edge": {
+          "version": "14",
+          "date": "2016-08-02",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10",
+          "date": "2016-09-20",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "62",
+          "date": "2017-10-24",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10",
+          "date": "2016-09-13",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/data.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"
+    },
+    "html-abbr": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "2",
+          "date": "2009-05-21",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "4",
+          "date": "2009-06-08",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "3.2",
+          "date": "2010-04-03",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/abbr.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"
+    },
+    "html-address": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/address.json",
+      "spec": "https://html.spec.whatwg.org/multipage/sections.html#the-address-element"
+    },
+    "html-aside": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "5",
+          "date": "2010-05-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4.2",
+          "date": "2010-11-22",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/aside.json",
+      "spec": "https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
+    },
+    "html-b": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/b.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"
+    },
+    "html-br": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/br.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"
+    },
+    "html-wbr": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "4",
+          "date": "2009-06-08",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "3.2",
+          "date": "2010-04-03",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/wbr.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"
+    },
+    "html-hr": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/hr.json",
+      "spec": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"
+    },
+    "html-small": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/small.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+    },
+    "html-sub": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/sub.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"
+    },
+    "html-s": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/s.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"
+    },
+    "html-del": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/del.json",
+      "spec": "https://html.spec.whatwg.org/multipage/edits.html#the-del-element"
+    },
+    "html-q": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/q.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"
+    },
+    "html-cite": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/cite.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"
+    },
+    "html-kbd": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/kbd.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"
+    },
+    "html-output": {
+      "status": "established",
+      "tracked": true,
+      "since": "2018-10-02",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "10",
+          "date": "2011-03-08",
+          "approximate": false
+        },
+        "edge": {
+          "version": "≤18",
+          "date": "2018-10-02",
+          "approximate": true
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "7",
+          "date": "2013-10-22",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "7",
+          "date": "2013-09-18",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/output.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"
+    },
+    "html-fieldset": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/fieldset.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"
+    },
+    "html-optgroup": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/optgroup.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"
+    },
+    "html-search": {
+      "status": "established",
+      "tracked": true,
+      "since": "2023-10-13",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "118",
+          "date": "2023-10-10",
+          "approximate": false
+        },
+        "edge": {
+          "version": "118",
+          "date": "2023-10-13",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "118",
+          "date": "2023-09-26",
+          "approximate": false
+        },
+        "safari": {
+          "version": "17",
+          "date": "2023-09-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "118",
+          "date": "2023-10-10",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "17",
+          "date": "2023-09-18",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/search.json",
+      "spec": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element"
+    },
+    "html-menu": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/menu.json",
+      "spec": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"
+    },
+    "html-bdi": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "16",
+          "date": "2011-12-13",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "10",
+          "date": "2012-01-31",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/bdi.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"
+    },
+    "html-bdo": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "≤15",
+          "date": "2011-10-25",
+          "approximate": true
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "10",
+          "date": "2012-01-31",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/bdo.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"
+    },
+    "html-u": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/u.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"
+    },
+    "html-dfn": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "15",
+          "date": "2011-10-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/dfn.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"
+    },
+    "html-var": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/var.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"
+    },
+    "html-hgroup": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "5",
+          "date": "2010-05-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4.2",
+          "date": "2010-11-22",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/hgroup.json",
+      "spec": "https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
+    },
+    "html-thead": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/thead.json",
+      "spec": "https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"
+    },
+    "html-template": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-11-12",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "26",
+          "date": "2013-03-26",
+          "approximate": false
+        },
+        "edge": {
+          "version": "13",
+          "date": "2015-11-12",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "8",
+          "date": "2014-10-16",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "26",
+          "date": "2013-04-03",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "8",
+          "date": "2014-09-17",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/template.json",
+      "spec": "https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"
+    },
+    "html-noscript": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/noscript.json",
+      "spec": "https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element"
+    },
+    "html-acronym": {
+      "status": "deprecated",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/acronym.json",
+      "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#acronym"
+    },
+    "html-big": {
+      "status": "deprecated",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/big.json",
+      "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#big"
+    },
+    "html-attr-data": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "7",
+          "date": "2010-10-19",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "6",
+          "date": "2011-08-16",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5.1",
+          "date": "2011-07-20",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#attr-data-*"
+    },
+    "html-attr-data-types": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "7",
+          "date": "2010-10-19",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "6",
+          "date": "2011-08-16",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5.1",
+          "date": "2011-07-20",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#attr-data-*"
+    },
+    "html-attr-id": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "32",
+          "date": "2014-09-02",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute"
+    },
+    "html-attr-class": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#classes"
+    },
+    "html-attr-style": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute"
+    },
+    "html-attr-title": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute"
+    },
+    "html-attr-lang": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#attr-lang"
+    },
+    "html-attr-dir": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute"
+    },
+    "html-attr-hidden": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "10",
+          "date": "2011-03-08",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5.1",
+          "date": "2011-07-20",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute"
+    },
+    "html-attr-inert": {
+      "status": "established",
+      "tracked": true,
+      "since": "2023-04-11",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "102",
+          "date": "2022-05-24",
+          "approximate": false
+        },
+        "edge": {
+          "version": "102",
+          "date": "2022-05-31",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "112",
+          "date": "2023-04-11",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.5",
+          "date": "2022-05-16",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "102",
+          "date": "2022-05-24",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.5",
+          "date": "2022-05-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute"
+    },
+    "html-attr-contenteditable": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "3",
+          "date": "2008-06-17",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable"
+    },
+    "html-attr-tabindex": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1.5",
+          "date": "2005-11-29",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3.1",
+          "date": "2008-03-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex"
+    },
+    "html-attr-draggable": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "4",
+          "date": "2010-01-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "2",
+          "date": "2006-10-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4.2",
+          "date": "2010-11-22",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dnd.html#the-draggable-attribute"
+    },
+    "html-attr-spellcheck": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "9",
+          "date": "2011-02-03",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "2",
+          "date": "2006-10-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5.1",
+          "date": "2011-07-20",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "47",
+          "date": "2015-12-02",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9.3",
+          "date": "2016-03-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#attr-spellcheck"
+    },
+    "html-attr-translate": {
+      "status": "established",
+      "tracked": true,
+      "since": "2023-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "19",
+          "date": "2012-05-15",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "111",
+          "date": "2023-03-14",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "25",
+          "date": "2013-02-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/dom.html#attr-translate"
+    },
+    "html-attr-role": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Roles",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-label": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-labelledby": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-describedby": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-hidden": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-expanded": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-aria-live": {
+      "status": "untracked",
+      "tracked": false,
+      "since": null,
+      "approximate": false,
+      "support": {},
+      "source": "https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live",
+      "supportNote": "MDN browser-compat-dataには、このARIA属性自体の導入版が収録されていません。JavaScriptの反映APIの導入版とは別です。実際のブラウザーと支援技術の組み合わせで確認してください。",
+      "experimental": false,
+      "spec": null
+    },
+    "html-attr-name-value": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name"
+    },
+    "html-attr-input-type": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-04-26",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "20",
+          "date": "2012-06-26",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "57",
+          "date": "2017-11-14",
+          "approximate": false
+        },
+        "safari": {
+          "version": "14.1",
+          "date": "2021-04-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "25",
+          "date": "2013-02-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input/date.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)"
+    },
+    "html-attr-required": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "4",
+          "date": "2010-01-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4",
+          "date": "2010-06-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-required"
+    },
+    "html-attr-disabled": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/button.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled"
+    },
+    "html-attr-readonly": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-readonly"
+    },
+    "html-attr-placeholder": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "3",
+          "date": "2009-09-15",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "4",
+          "date": "2009-06-08",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "3.2",
+          "date": "2010-04-03",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder"
+    },
+    "html-attr-autocomplete": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "14",
+          "date": "2011-09-16",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete"
+    },
+    "html-attr-inputmode": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-12-07",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "66",
+          "date": "2018-04-17",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "95",
+          "date": "2021-12-07",
+          "approximate": false
+        },
+        "safari": {
+          "version": "12.1",
+          "date": "2019-03-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "66",
+          "date": "2018-04-17",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "12.2",
+          "date": "2019-03-25",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode"
+    },
+    "html-attr-enterkeyhint": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-11-02",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "77",
+          "date": "2019-09-10",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "94",
+          "date": "2021-11-02",
+          "approximate": false
+        },
+        "safari": {
+          "version": "13.1",
+          "date": "2020-03-24",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "77",
+          "date": "2019-09-10",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "13.4",
+          "date": "2020-03-24",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint"
+    },
+    "html-attr-pattern": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "4",
+          "date": "2010-01-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4",
+          "date": "2010-06-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-pattern"
+    },
+    "html-attr-min-max-step": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "5",
+          "date": "2010-05-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "16",
+          "date": "2012-10-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4",
+          "date": "2010-06-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-step"
+    },
+    "html-attr-minlength-maxlength": {
+      "status": "established",
+      "tracked": true,
+      "since": "2018-04-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "40",
+          "date": "2015-01-21",
+          "approximate": false
+        },
+        "edge": {
+          "version": "17",
+          "date": "2018-04-30",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "51",
+          "date": "2017-01-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "40",
+          "date": "2015-01-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-minlength"
+    },
+    "html-attr-checked": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-checked"
+    },
+    "html-attr-selected": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/option.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-option-selected"
+    },
+    "html-attr-multiple": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/select.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-multiple"
+    },
+    "html-attr-for": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/label.json",
+      "spec": "https://html.spec.whatwg.org/multipage/forms.html#attr-label-for"
+    },
+    "html-attr-form": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fae-form"
+    },
+    "html-attr-button-type": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/button.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-type"
+    },
+    "html-attr-href": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/a.json",
+      "spec": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"
+    },
+    "html-attr-alt": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/img.json",
+      "spec": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-alt"
+    },
+    "html-attr-width-height": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/img.json",
+      "spec": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width"
+    },
+    "html-attr-loading": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "77",
+          "date": "2019-09-10",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "75",
+          "date": "2020-04-07",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "77",
+          "date": "2019-09-10",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/img.json",
+      "spec": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-loading"
+    },
+    "html-attr-decoding": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "65",
+          "date": "2018-03-06",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "63",
+          "date": "2018-10-23",
+          "approximate": false
+        },
+        "safari": {
+          "version": "11.1",
+          "date": "2018-04-12",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "65",
+          "date": "2018-03-06",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "11.3",
+          "date": "2018-03-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/img.json",
+      "spec": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-decoding"
+    },
+    "html-attr-open": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "12",
+          "date": "2011-06-07",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "49",
+          "date": "2016-09-20",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/details.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-details-open"
+    },
+    "html-attr-accept": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-accept"
+    },
     "html-popover": {
       "status": "established",
+      "tracked": true,
       "since": "2024-04-16",
       "approximate": false,
       "support": {
