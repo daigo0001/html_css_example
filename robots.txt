@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daigo0001.github.io/html_css_example/sitemap.xml

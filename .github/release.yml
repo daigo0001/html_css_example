@@ -1,0 +1,10 @@
+changelog:
+  exclude:
+    labels: [skip-changelog]
+  categories:
+    - title: New cards & features
+      labels: [enhancement, feature]
+    - title: Fixes
+      labels: [bug]
+    - title: Documentation & maintenance
+      labels: ['*']

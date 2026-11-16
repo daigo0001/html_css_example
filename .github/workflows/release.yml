@@ -1,0 +1,105 @@
+name: Release
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Release · {0}', inputs.bump) || format('Release · {0}', github.ref_name) }}
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 更新するバージョン（必ず main から作成します）
+        type: choice
+        required: true
+        default: patch
+        options: [patch, minor, major]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Version & tag
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Bump package and lockfile
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          BUMP: ${{ inputs.bump }}
+        run: |
+          case "$BUMP" in patch|minor|major) ;; *) exit 1 ;; esac
+          npm version "$BUMP" --no-git-tag-version --ignore-scripts
+      - name: Validate version and tag
+        id: version
+        env:
+          EVENT: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          TAG="v$(node -p 'JSON.parse(require("fs").readFileSync("package.json", "utf8")).version')"
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Stable SemVer tag required" >&2
+            exit 1
+          fi
+          if [ "$EVENT" = "push" ]; then
+            test "$TAG" = "$REF_NAME"
+            git merge-base --is-ancestor HEAD origin/main
+          else
+            if git rev-parse --verify "refs/tags/$TAG" >/dev/null 2>&1; then
+              echo "Tag already exists: $TAG" >&2
+              exit 1
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add package.json package-lock.json
+            git commit -m "chore: release $TAG"
+            git tag -a "$TAG" -m "Web Notes $TAG"
+            git push --atomic origin HEAD:main "refs/tags/$TAG"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+  validate-and-deploy:
+    needs: prepare
+    uses: ./.github/workflows/pages.yml
+    with:
+      ref: ${{ needs.prepare.outputs.tag }}
+
+  release:
+    name: Publish GitHub Release
+    needs: [prepare, validate-and-deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+          fetch-depth: 0
+      - name: Download the tested Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: release-artifact
+      - name: Create release with generated notes and the static site
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists"
+          else
+            gh release create "$TAG" release-artifact/artifact.tar --verify-tag --generate-notes --title "Web Notes $TAG"
+          fi

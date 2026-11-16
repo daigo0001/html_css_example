@@ -1,0 +1,22 @@
+{
+  "name": "web-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "HTMLとCSSを見て、触って学ぶカード図鑑",
+  "scripts": {
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "check": "node --test tests/catalog.test.mjs",
+    "test": "playwright test",
+    "test:all": "npm run check && npm test",
+    "compat:update": "node scripts/compat.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@mdn/browser-compat-data": "8.1.9",
+    "@playwright/test": "1.65.1"
+  }
+}
