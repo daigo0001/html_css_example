@@ -400,7 +400,7 @@ function setupEvents() {
     copy(url.href, 'このカードへのリンクをコピーしました。');
   });
   $('#preview-width').addEventListener('change', event => { $('#live-preview').style.width = event.target.value; });
-  for (const id of ['about-button', 'how-to-button', 'compat-info']) $(`#${id}`).addEventListener('click', openAbout);
+  for (const id of ['about-button', 'compat-info']) $(`#${id}`).addEventListener('click', openAbout);
   $('#close-about').addEventListener('click', () => $('#about-dialog').close());
   $('#about-dialog').addEventListener('close', () => { document.body.style.overflow = ''; });
   for (const dialog of $$('dialog')) dialog.addEventListener('click', event => {

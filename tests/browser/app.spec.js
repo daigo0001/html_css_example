@@ -122,8 +122,8 @@ test('キーボードで検索・タブ切替・モーダル終了を操作で�
   await expect(open).toBeFocused();
 });
 
-test('150枚のカタログを最後まで読み込め、重複や欠落がない', async ({ page }) => {
-  // 通常の12枚表示とは異なり、全150枚の独立したプレビューを順に開く。
+test('カタログを最後まで読み込め、重複や欠落がない', async ({ page }) => {
+  // 通常の12枚表示とは異なり、全カードの独立したプレビューを順に開く。
   test.setTimeout(60_000);
   await ready(page);
   while (await page.locator('#load-more').isVisible()) await page.locator('#load-more').click();

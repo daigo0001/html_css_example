@@ -1,7 +1,7 @@
 {
   "source": "MDN browser-compat-data",
   "version": "8.1.9",
-  "checkedAt": "2026-11-16",
+  "checkedAt": "2026-11-17",
   "methodology": "接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。ARIAなど属性自体の導入版がBCDにない項目は「版数未収録」と表示し、未対応とは区別する。",
   "cards": {
     "html-details": {
@@ -5943,6 +5943,2466 @@
       "experimental": false,
       "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/global_attributes.json",
       "spec": "https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute"
+    },
+    "css-margin": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/margin.json",
+      "spec": "https://drafts.csswg.org/css-box/#margin"
+    },
+    "css-padding": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/padding.json",
+      "spec": "https://drafts.csswg.org/css-box/#padding-shorthand"
+    },
+    "css-width": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/width.json",
+      "spec": "https://drafts.csswg.org/css-sizing-3/#propdef-width"
+    },
+    "css-min-width": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/min-width.json",
+      "spec": "https://drafts.csswg.org/css-sizing/#sizing-values"
+    },
+    "css-max-width": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/max-width.json",
+      "spec": "https://drafts.csswg.org/css-sizing/#sizing-values"
+    },
+    "css-height": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "3",
+          "date": "2008-06-17",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1.3",
+          "date": "2005-04-15",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/min-height.json",
+      "spec": "https://drafts.csswg.org/css-sizing/#sizing-values"
+    },
+    "css-flex-direction": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "29",
+          "date": "2013-08-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "29",
+          "date": "2013-08-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/flex-direction.json",
+      "spec": "https://drafts.csswg.org/css-flexbox/#flex-direction-property"
+    },
+    "css-flex-wrap": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "29",
+          "date": "2013-08-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "28",
+          "date": "2014-03-18",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "29",
+          "date": "2013-08-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/flex-wrap.json",
+      "spec": "https://drafts.csswg.org/css-flexbox/#flex-wrap-property"
+    },
+    "css-justify-content": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "29",
+          "date": "2013-08-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "20",
+          "date": "2013-04-02",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "29",
+          "date": "2013-08-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/justify-content.json",
+      "spec": "https://drafts.csswg.org/css-align/#align-justify-content"
+    },
+    "css-align-items": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "29",
+          "date": "2013-08-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "20",
+          "date": "2013-04-02",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "29",
+          "date": "2013-08-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/align-items.json",
+      "spec": "https://drafts.csswg.org/css-align/#align-items-property"
+    },
+    "css-flex": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "29",
+          "date": "2013-08-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "29",
+          "date": "2013-08-21",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/flex.json",
+      "spec": "https://drafts.csswg.org/css-flexbox/#flex-property"
+    },
+    "css-grid-auto-flow": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-10-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "57",
+          "date": "2017-03-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "16",
+          "date": "2017-10-17",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "52",
+          "date": "2017-03-07",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/grid-auto-flow.json",
+      "spec": "https://drafts.csswg.org/css-grid/#grid-auto-flow-property"
+    },
+    "css-grid-column": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-10-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "57",
+          "date": "2017-03-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "16",
+          "date": "2017-10-17",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "52",
+          "date": "2017-03-07",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/grid-column.json",
+      "spec": "https://drafts.csswg.org/css-grid/#placement-shorthands"
+    },
+    "css-place-items": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "59",
+          "date": "2017-06-05",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "45",
+          "date": "2016-03-08",
+          "approximate": false
+        },
+        "safari": {
+          "version": "11",
+          "date": "2017-09-19",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "59",
+          "date": "2017-06-06",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "11",
+          "date": "2017-09-19",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/place-items.json",
+      "spec": "https://drafts.csswg.org/css-align/#place-items-property"
+    },
+    "css-z-index": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/z-index.json",
+      "spec": "https://drafts.csswg.org/css2/#z-index"
+    },
+    "css-isolation": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "41",
+          "date": "2015-03-03",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "36",
+          "date": "2015-02-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "8",
+          "date": "2014-10-16",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "41",
+          "date": "2015-03-11",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "8",
+          "date": "2014-09-17",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/isolation.json",
+      "spec": "https://drafts.csswg.org/compositing/#isolation"
+    },
+    "css-inset": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-04-26",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "87",
+          "date": "2020-11-17",
+          "approximate": false
+        },
+        "edge": {
+          "version": "87",
+          "date": "2020-11-19",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "66",
+          "date": "2019-03-19",
+          "approximate": false
+        },
+        "safari": {
+          "version": "14.1",
+          "date": "2021-04-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "87",
+          "date": "2020-11-17",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "14.5",
+          "date": "2021-04-26",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/inset.json",
+      "spec": "https://drafts.csswg.org/css-logical/#propdef-inset"
+    },
+    "css-font-size": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/font-size.json",
+      "spec": "https://drafts.csswg.org/css-fonts/#font-size-prop"
+    },
+    "css-font-weight": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "2",
+          "date": "2009-05-21",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/font-weight.json",
+      "spec": "https://drafts.csswg.org/css-fonts/#font-weight-prop"
+    },
+    "css-font-family": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/font-family.json",
+      "spec": "https://drafts.csswg.org/css-fonts/#generic-font-families"
+    },
+    "css-line-height": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/line-height.json",
+      "spec": "https://drafts.csswg.org/css-inline/#line-height-property"
+    },
+    "css-letter-spacing": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/letter-spacing.json",
+      "spec": "https://drafts.csswg.org/css-text/#letter-spacing-property"
+    },
+    "css-text-align": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/text-align.json",
+      "spec": "https://drafts.csswg.org/css-logical/#text-align"
+    },
+    "css-text-decoration": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/text-decoration.json",
+      "spec": "https://drafts.csswg.org/css-text-decor-4/#text-decoration-property"
+    },
+    "css-white-space": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/white-space.json",
+      "spec": "https://drafts.csswg.org/css-text-4/#white-space-property"
+    },
+    "css-overflow-wrap": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "80",
+          "date": "2020-02-04",
+          "approximate": false
+        },
+        "edge": {
+          "version": "80",
+          "date": "2020-02-07",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "65",
+          "date": "2019-01-29",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "80",
+          "date": "2020-02-04",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/overflow-wrap.json",
+      "spec": "https://drafts.csswg.org/css-text/#valdef-overflow-wrap-anywhere"
+    },
+    "css-list-style": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/list-style.json",
+      "spec": "https://drafts.csswg.org/css-lists/#list-style-property"
+    },
+    "css-border": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/border.json",
+      "spec": "https://drafts.csswg.org/css-backgrounds/#propdef-border"
+    },
+    "css-background-size": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "3",
+          "date": "2009-09-15",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4.2",
+          "date": "2010-11-22",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/background-size.json",
+      "spec": "https://drafts.csswg.org/css-backgrounds/#background-size"
+    },
+    "css-clip-path": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "55",
+          "date": "2016-12-01",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "3.5",
+          "date": "2009-06-30",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9.1",
+          "date": "2016-03-21",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "55",
+          "date": "2016-12-06",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9.3",
+          "date": "2016-03-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/clip-path.json",
+      "spec": "https://drafts.csswg.org/css-masking/#propdef-clip-path"
+    },
+    "css-cursor": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1.2",
+          "date": "2004-02-02",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "13.4",
+          "date": "2020-03-24",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/cursor.json",
+      "spec": "https://drafts.csswg.org/css-ui/#cursor"
+    },
+    "css-resize": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": null,
+          "date": null,
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/resize.json",
+      "spec": "https://drafts.csswg.org/css-ui/#resize"
+    },
+    "css-appearance": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "84",
+          "date": "2020-07-27",
+          "approximate": false
+        },
+        "edge": {
+          "version": "84",
+          "date": "2020-07-16",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "80",
+          "date": "2020-08-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "84",
+          "date": "2020-07-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/appearance.json",
+      "spec": "https://drafts.csswg.org/css-ui/#appearance-switching"
+    },
+    "css-user-select": {
+      "status": "limited",
+      "tracked": true,
+      "since": null,
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "54",
+          "date": "2016-10-12",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "69",
+          "date": "2019-09-03",
+          "approximate": false
+        },
+        "safari": {
+          "version": null,
+          "date": null,
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "54",
+          "date": "2016-10-19",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": null,
+          "date": null,
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/user-select.json",
+      "spec": "https://drafts.csswg.org/css-ui/#content-selection"
+    },
+    "css-scroll-behavior": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "61",
+          "date": "2017-09-05",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "36",
+          "date": "2015-02-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "61",
+          "date": "2017-09-05",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/scroll-behavior.json",
+      "spec": "https://drafts.csswg.org/css-overflow/#smooth-scrolling"
+    },
+    "css-scroll-margin-top": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-04-26",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "69",
+          "date": "2018-09-04",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "68",
+          "date": "2019-07-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "14.1",
+          "date": "2021-04-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "69",
+          "date": "2018-09-04",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "14.5",
+          "date": "2021-04-26",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/scroll-margin-top.json",
+      "spec": "https://drafts.csswg.org/css-scroll-snap/#margin-longhands-physical"
+    },
+    "css-inline-size": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "57",
+          "date": "2017-03-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "41",
+          "date": "2015-09-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "12.1",
+          "date": "2019-03-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "12.2",
+          "date": "2019-03-25",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/inline-size.json",
+      "spec": "https://drafts.csswg.org/css-logical/#dimension-properties"
+    },
+    "css-hover": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "2",
+          "date": "2005-04-29",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/hover.json",
+      "spec": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-hover"
+    },
+    "css-focus-visible": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "86",
+          "date": "2020-10-20",
+          "approximate": false
+        },
+        "edge": {
+          "version": "86",
+          "date": "2020-10-09",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "85",
+          "date": "2021-01-26",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "86",
+          "date": "2020-10-20",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/focus-visible.json",
+      "spec": "https://drafts.csswg.org/selectors/#the-focus-visible-pseudo"
+    },
+    "css-checked": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3.1",
+          "date": "2008-03-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/checked.json",
+      "spec": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-checked"
+    },
+    "css-nth-child": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "3.5",
+          "date": "2009-06-30",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3.1",
+          "date": "2008-03-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/nth-child.json",
+      "spec": "https://drafts.csswg.org/selectors/#nth-child-pseudo"
+    },
+    "css-not": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3.1",
+          "date": "2008-03-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/not.json",
+      "spec": "https://drafts.csswg.org/selectors/#negation"
+    },
+    "css-is-where": {
+      "status": "established",
+      "tracked": true,
+      "since": "2021-01-21",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "88",
+          "date": "2021-01-19",
+          "approximate": false
+        },
+        "edge": {
+          "version": "88",
+          "date": "2021-01-21",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "78",
+          "date": "2020-06-30",
+          "approximate": false
+        },
+        "safari": {
+          "version": "14",
+          "date": "2020-09-16",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "88",
+          "date": "2021-01-19",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "14",
+          "date": "2020-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/where.json",
+      "spec": "https://drafts.csswg.org/selectors/#where-pseudo"
+    },
+    "css-before": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1.5",
+          "date": "2005-11-29",
+          "approximate": false
+        },
+        "safari": {
+          "version": "4",
+          "date": "2009-06-08",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "3",
+          "date": "2009-06-17",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/before.json",
+      "spec": "https://www.w3.org/TR/css-pseudo-4/#selectordef-before"
+    },
+    "css-placeholder": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "57",
+          "date": "2017-03-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "51",
+          "date": "2017-01-24",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/placeholder.json",
+      "spec": "https://drafts.csswg.org/css-pseudo/#placeholder-pseudo"
+    },
+    "css-selection": {
+      "status": "established",
+      "tracked": true,
+      "since": "2018-09-05",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "62",
+          "date": "2018-09-05",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1.1",
+          "date": "2003-10-24",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": null,
+          "date": null,
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/selection.json",
+      "spec": "https://drafts.csswg.org/css-pseudo/#selectordef-selection"
+    },
+    "css-media": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/at-rules/media.json",
+      "spec": "https://drafts.csswg.org/mediaqueries/#media-descriptor-table"
+    },
+    "css-supports": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-09-30",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "28",
+          "date": "2013-07-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "9",
+          "date": "2015-09-30",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "28",
+          "date": "2013-07-10",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "9",
+          "date": "2015-09-16",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/at-rules/supports.json",
+      "spec": "https://drafts.csswg.org/css-conditional-5/#at-supports-ext"
+    },
+    "css-layer": {
+      "status": "established",
+      "tracked": true,
+      "since": "2022-03-14",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "99",
+          "date": "2022-03-01",
+          "approximate": false
+        },
+        "edge": {
+          "version": "99",
+          "date": "2022-03-03",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "97",
+          "date": "2022-02-08",
+          "approximate": false
+        },
+        "safari": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "99",
+          "date": "2022-03-01",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "15.4",
+          "date": "2022-03-14",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/at-rules/layer.json",
+      "spec": "https://drafts.csswg.org/css-cascade-5/#layering"
+    },
+    "css-calc": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "26",
+          "date": "2013-03-26",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "16",
+          "date": "2012-10-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "7",
+          "date": "2013-10-22",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "28",
+          "date": "2013-07-10",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "7",
+          "date": "2013-09-18",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/types/calc.json",
+      "spec": "https://drafts.csswg.org/css-values/#calc-func"
+    },
+    "css-units": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/types/length.json",
+      "spec": "https://drafts.csswg.org/css-values/#lengths"
+    },
+    "css-minmax": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-10-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "57",
+          "date": "2017-03-09",
+          "approximate": false
+        },
+        "edge": {
+          "version": "16",
+          "date": "2017-10-17",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "52",
+          "date": "2017-03-07",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/properties/grid-template-columns.json",
+      "spec": "https://drafts.csswg.org/css-grid/#funcdef-grid-template-columns-minmax"
+    },
+    "html-attr-list": {
+      "status": "established",
+      "tracked": true,
+      "since": "2019-03-25",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "20",
+          "date": "2012-06-26",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "12.1",
+          "date": "2019-03-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "33",
+          "date": "2014-02-26",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "12.2",
+          "date": "2019-03-25",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input/text.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)"
+    },
+    "html-attr-wrap": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "16",
+          "date": "2011-12-13",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/textarea.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap"
+    },
+    "html-attr-size": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#attr-input-size"
+    },
+    "html-attr-rows-cols": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/textarea.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows"
+    },
+    "html-attr-details-name": {
+      "status": "recent",
+      "tracked": true,
+      "since": "2024-09-03",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "120",
+          "date": "2023-12-05",
+          "approximate": false
+        },
+        "edge": {
+          "version": "120",
+          "date": "2023-12-07",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "130",
+          "date": "2024-09-03",
+          "approximate": false
+        },
+        "safari": {
+          "version": "17.2",
+          "date": "2023-12-11",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "120",
+          "date": "2023-12-05",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "17.2",
+          "date": "2023-12-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/details.json",
+      "spec": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-details-name"
+    },
+    "html-attr-datetime": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-10-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "62",
+          "date": "2017-10-17",
+          "approximate": false
+        },
+        "edge": {
+          "version": "14",
+          "date": "2016-08-02",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "22",
+          "date": "2013-06-25",
+          "approximate": false
+        },
+        "safari": {
+          "version": "7",
+          "date": "2013-10-22",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "62",
+          "date": "2017-10-24",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "4",
+          "date": "2010-06-21",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/time.json",
+      "spec": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-time-datetime"
+    },
+    "html-attr-reversed-start": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-01-15",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "18",
+          "date": "2012-03-28",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "18",
+          "date": "2013-01-08",
+          "approximate": false
+        },
+        "safari": {
+          "version": "6",
+          "date": "2012-07-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "6",
+          "date": "2012-09-10",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/ol.json",
+      "spec": "https://html.spec.whatwg.org/multipage/grouping-content.html#attr-ol-reversed"
+    },
+    "html-attr-colspan-rowspan": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/td.json",
+      "spec": "https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-colspan"
     }
   }
 }

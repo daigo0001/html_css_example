@@ -9,7 +9,8 @@
 
 ## できること
 
-- **150枚のカード**：HTML要素68件・HTML属性48件・CSS34件。構造・テキスト・レイアウト・フォーム・メディア・動き・属性とデータ。基本から `:has()`、コンテナークエリー、Anchor Positioning、廃止された要素まで。
+- **210枚のカード**：HTML要素68件・HTML属性56件・CSS86件。余白・文字・Flexbox / Gridの基本から、セレクター、メディアクエリー、カスケードレイヤー、`:has()`、コンテナークエリー、Anchor Positioning、廃止された要素まで。
+- **検索からすぐ使えるホーム**：紹介用のヒーローや案内バナーを省き、カード一覧を先頭に表示。「CSSの基本・条件」カテゴリーからセレクター・単位・条件付きルールをまとめて探せます。
 - **属性・データ**：`data-*`と`dataset`、`id`・`class`、真偽値属性、入力の検証・補完、ARIA、画像の属性を解説。「属性」タブで絞り込めます。`<data>`要素との違いも掲載。
 - **本物の表示とコード**：プレビューの開閉や入力を操作し、HTML/CSSを書き換えて即時確認。リセット・コピー・幅の切り替え・カードへの共有リンク付き。
 - **いつから使えるか**：MDNのデータをもとに、対応開始時期とChrome / Edge / Firefox / Safari / Chrome Android / Safari iOSの開始版を表示。
@@ -73,7 +74,7 @@ git push --atomic origin main --follow-tags
 
 ## カードと互換性データを追加する
 
-1. カタログを追加。既存カードは[`assets/catalog.js`](assets/catalog.js)、追加HTML要素は[`assets/html-elements.js`](assets/html-elements.js)、属性は[`assets/html-attributes.js`](assets/html-attributes.js)に分けています。共通の生成ヘルパーは[`assets/card-helpers.js`](assets/card-helpers.js)。説明・SEO・注意点・実例・MDN URL・BCDキーを指定し、必要に応じて参考JavaScriptの`js`を添えます。
+1. カタログを追加。既存カードは[`assets/catalog.js`](assets/catalog.js)、追加HTML要素は[`assets/html-elements.js`](assets/html-elements.js)、属性は[`assets/html-attributes.js`](assets/html-attributes.js)と[`assets/html-attribute-examples.js`](assets/html-attribute-examples.js)、CSSの追加実例は[`assets/css-examples.js`](assets/css-examples.js)に分けています。共通の生成ヘルパーは[`assets/card-helpers.js`](assets/card-helpers.js)。説明・SEO・注意点・実例・MDN URL・BCDキーを指定し、必要に応じて参考JavaScriptの`js`を添えます。
 2. `npm run compat:update` で [`assets/compatibility.json`](assets/compatibility.json) を生成。
 3. `npm run test:all` で検証し、変更をmainへpush。
 

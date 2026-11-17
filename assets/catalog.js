@@ -1,6 +1,8 @@
 import { h, c } from './card-helpers.js';
 import { extraElements } from './html-elements.js';
 import { attributes } from './html-attributes.js';
+import { extraCss } from './css-examples.js';
+import { extraAttributes } from './html-attribute-examples.js';
 
 // 説明と実行可能な最小例。互換性は scripts/compat.mjs で MDN BCD から生成する。
 export const categories = [
@@ -8,6 +10,7 @@ export const categories = [
   { id: 'structure', label: '文書・セマンティクス', icon: 'file' },
   { id: 'text', label: 'テキスト・装飾', icon: 'type' },
   { id: 'layout', label: 'レイアウト', icon: 'layout' },
+  { id: 'foundations', label: 'CSSの基本・条件', icon: 'code' },
   { id: 'attributes', label: '属性・データ', icon: 'sliders' },
   { id: 'forms', label: 'フォーム・操作', icon: 'cursor' },
   { id: 'media', label: '画像・メディア', icon: 'image' },
@@ -420,6 +423,8 @@ export const cards = [
 
   ...extraElements,
   ...attributes,
+  ...extraCss,
+  ...extraAttributes,
 ];
 
 export const cardById = new Map(cards.map(card => [card.id, card]));
