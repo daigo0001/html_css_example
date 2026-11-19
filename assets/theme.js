@@ -5,5 +5,5 @@
   const theme = ['light', 'dark'].includes(preference)
     ? preference : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   document.documentElement.dataset.theme = theme;
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#111a16' : '#f7f8f4';
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#161618' : '#f5f5f7';
 })();

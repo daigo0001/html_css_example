@@ -148,7 +148,7 @@ export const attributes = [
   a('required', 'required', '入力や選択を必須にする。エラー文を見せる前に、必須も明記しよう。',
     '<form><label for="required-name">名前（必須）</label>\n  <input id="required-name" required>\n  <button>入力をチェック</button>\n</form>', {
       bcd: 'html.elements.input.required', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/required',
-      usage: '対応するinput・select・textareaを必須にします。フォームの標準の検証時にチェックされます。サーバー側の検証も必要で、この属性だけで不正なデータを防げるわけではありません。',
+      usage: '対応する input・select・textarea を必須にします。required は真偽値属性なので、付いていれば必須です。JavaScript では要素の required プロパティに true / false を代入できます。空欄の判定は validity.valueMissing で読み取れます。サーバー側でも必須かを検証します。',
       note: '空のままボタンを押すと、ブラウザー標準の入力チェックを確認できます。実際の送信はブロックしています。',
     }),
   a('disabled', 'disabled / 真偽値属性', 'falseと書いても無効になる？HTMLの真偽値属性は「あるか」で決まる。',
@@ -187,19 +187,20 @@ export const attributes = [
   a('pattern', 'pattern', '入力全体に一致してほしいパターンを、正規表現で指定する。',
     '<form><label for="code">商品コード（英大文字2字＋数字3桁）</label>\n<input id="code" pattern="[A-Z]{2}[0-9]{3}" required placeholder="AB123">\n<button>入力をチェック</button></form>', {
       bcd: 'html.elements.input.pattern', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/pattern',
-      usage: '対応するテキスト系inputの値全体に対して検証します。空欄も拒否するならrequiredを併用。スラッシュで囲まずに書き、HTMLの属性値と現在の正規表現仕様の両方に注意します。',
+      usage: '対応するテキスト系 input の値全体に対して検証します。正規表現はスラッシュで囲まずに書きます。空欄も拒否するなら required を併用し、不一致は validity.patternMismatch で確認できます。',
       note: '不一致の値でボタンを押してみましょう。パターンだけで内容の意味や安全性までは保証できません。',
     }),
   a('min-max-step', 'min / max / step', '数値や日時の範囲と刻みを決める。入力部品のtypeに合わせて。',
     '<label for="quantity">冊数（2〜10、2ずつ）</label>\n<input id="quantity" type="number" min="2" max="10" step="2" value="4">', {
       bcd: 'html.elements.input.step', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/step',
-      usage: 'minが最小値、maxが最大値、stepが刻みです。numberやrange、dateなどで値の形式や単位が変わります。矢印操作だけでなく、フォーム検証にも関わります。',
+      usage: 'min が最小値、max が最大値、step が刻みです。step はこの例では min の 2 を起点に判定されます。値の形式や刻みの単位は input の type によって変わります。',
+      js: 'const input = document.querySelector("#quantity");\nconst { rangeUnderflow, rangeOverflow, stepMismatch } = input.validity;\nconsole.log({ rangeUnderflow, rangeOverflow, stepMismatch });\nconsole.log(input.valueAsNumber); // 数値。空欄なら NaN',
       note: '表はinputのstepの情報です。複合した例の全属性・全input typeで同じ導入版という意味ではありません。',
     }),
   a('minlength-maxlength', 'minlength / maxlength', '入力文字列の最小・最大の長さを指定する。',
     '<label for="memo">ひとこと（3〜12）</label>\n<input id="memo" minlength="3" maxlength="12" required placeholder="短い発見をどうぞ">', {
       bcd: 'html.elements.input.minlength', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/minlength',
-      usage: '対応するinputやtextareaに使います。長さはUTF-16コード単位で数えるため、絵文字などは見た目の文字数と一致しないことがあります。最小文字数は主にフォーム検証のタイミングで判定されます。',
+      usage: '対応する input や textarea に指定し、JavaScript では minLength / maxLength で設定を読み書きできます。長さは UTF-16 コード単位です。利用者が入力した値の長さは validity.tooShort / tooLong で確認でき、多くのブラウザーは maxlength を超える入力自体を制限します。',
       note: '空欄も禁止するならrequiredが必要です。表はinputのminlengthの対応開始版です。',
     }),
   a('checked', 'checked', 'チェックボックス・ラジオボタンの、最初の選択状態を指定する。',
@@ -282,7 +283,8 @@ export const attributes = [
     '<label for="image-file">画像を選ぶ（送信はしません）</label>\n<input id="image-file" type="file" accept="image/png, image/jpeg, image/svg+xml">', {
       bcd: 'html.elements.input.accept', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/accept',
       usage: 'file入力で許可したいMIMEタイプや拡張子をカンマ区切りで書きます。ファイル選択UIへのヒントであり、必ずその種類しか選べないというセキュリティ境界ではありません。サーバー側でも種類や内容を検証します。',
-      note: 'このカードは端末で選択するUIの例で、ファイルのアップロードや内容の読み取り・保存は行いません。ファイル選択画面の見た目はOSやブラウザーで異なります。',
+      js: 'const input = document.querySelector("#image-file");\ninput.addEventListener("change", () => {\n  for (const file of input.files) console.log(file.name, file.size, file.type);\n});',
+      note: 'プレビューでは端末のファイル選択画面を試せます。フォームでファイルを送るときは enctype のカードを参照してください。',
     }),
   h('popover', 'popover', 'forms', 'ボタンで開閉できる、ちょっとした補足。JavaScriptなしのポップオーバー。',
     '<button popovertarget="tip">ヒントを見る</button>\n<div id="tip" popover>\n  小さく試すのが、いちばんの近道。\n</div>', {

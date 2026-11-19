@@ -77,10 +77,10 @@ export const extraElements = [
       usage: 'kbd はユーザーの入力、samp はシステムの出力例です。ソースコードは code にします。この例は操作案内を表示するだけで、ショートカットは登録しません。',
     }),
   h('output', 'output', 'forms', '計算や操作の結果を示す。outputだけでは自動計算されない。',
-    '<label>幅：<input id="width" type="number" value="6"></label>\n<p>計算例：<output for="width">36</output> cm²</p>', {
+    '<label>一辺の長さ：<input id="width" type="number" min="1" value="6"></label>\n<p>計算例：<output for="width">36</output> cm²</p>', {
       css: 'input { width: 70px; padding: 5px; border: 1px solid #c4d5b3; border-radius: 5px; }\noutput { font-weight: 700; color: #608143; }',
-      usage: '計算や利用者の操作の結果に使います。for に関連する入力のidを空白区切りで書けます。この例は初期結果を表示しており、入力変更後の再計算にはJavaScriptが必要です。',
-      js: 'const width = document.querySelector("#width");\nconst result = document.querySelector("output");\nwidth.addEventListener("input", () => {\n  result.value = Number(width.value) ** 2;\n});',
+      usage: '計算や利用者の操作の結果に使います。for に関連する入力のidを空白区切りで書けます。結果は output.value で更新します。計算結果は標準のフォーム送信データの対象外です。',
+      js: 'const width = document.querySelector("#width");\nconst result = document.querySelector("output");\nwidth.addEventListener("input", () => {\n  const side = width.valueAsNumber;\n  result.value = width.validity.valid && Number.isFinite(side) ? side ** 2 : "—";\n});',
       note: '参考のJavaScriptはこの図鑑のプレビューでは実行しません。入力を変えても表示結果は自動更新されません。',
     }),
   h('fieldset', 'fieldset / legend', 'forms', '関連する入力を、まとまりの名前と一緒にグループ化する。',
@@ -90,9 +90,9 @@ export const extraElements = [
       note: '同じ name のラジオボタンを切り替えてみましょう。fieldset に disabled を付けると原則、まとまり全体を無効にできます。',
     }),
   h('optgroup', 'optgroup', 'forms', '長い選択肢を、意味のあるグループに分ける。',
-    '<label for="lesson">学ぶテーマ</label>\n<select id="lesson">\n  <optgroup label="HTML"><option>要素</option><option>属性</option></optgroup>\n  <optgroup label="CSS"><option>レイアウト</option><option>装飾</option></optgroup>\n</select>', {
+    '<label for="lesson">学ぶテーマ（必須）</label>\n<select id="lesson" name="lesson" required>\n  <option value="">選んでください</option>\n  <optgroup label="HTML"><option>要素</option><option>属性</option></optgroup>\n  <optgroup label="CSS"><option>レイアウト</option><option>装飾</option></optgroup>\n</select>', {
       css: 'label { display: block; margin-bottom: 10px; font-size: 12px; }\nselect { width: 100%; padding: 9px; border: 1px solid #bfceae; border-radius: 6px; background: white; color: #40533b; }',
-      usage: 'select 内の option を分類します。グループ名は label 属性で指定し、optgroup 自体は選択できません。入れ子のoptgroupは作れません。',
+      usage: 'select 内の option を分類します。グループ名は label 属性で指定し、利用者が選択するのはグループ内の option です。通常の単一選択では、required と先頭の空の option を使って選択を必須にできます。',
     }),
   h('search', 'search', 'structure', '検索や絞り込みに関わる操作のまとまりを明示する。',
     '<search>\n  <label for="query">カードを探す</label>\n  <input id="query" type="search" placeholder="例：data-*">\n</search>', {

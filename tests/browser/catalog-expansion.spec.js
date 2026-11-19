@@ -30,14 +30,15 @@ test('ホームは検索と一覧から始まり、CSSの基本をカテゴリ�
 
 test('メディアクエリーはプレビュー幅に応じて3列と1列を切り替える', async ({ page }) => {
   const frame = await open(page, 'css-media');
+  const boxes = frame.locator('.boxes');
   await page.locator('#preview-width').selectOption('320px');
-  await expect.poll(async () => (await frame.locator('.boxes').evaluate(el => getComputedStyle(el).gridTemplateColumns)).split(' ').length).toBe(3);
+  await expect(boxes).toHaveCSS('grid-template-columns', /^(\S+px ){2}\S+px$/);
   await page.locator('#preview-width').selectOption('240px');
-  await expect.poll(async () => (await frame.locator('.boxes').evaluate(el => getComputedStyle(el).gridTemplateColumns)).split(' ').length).toBe(1);
+  await expect(boxes).toHaveCSS('grid-template-columns', /^\S+px$/);
   await page.locator('#code-editor').fill('.boxes { display: grid; grid-template-columns: 1fr 1fr; }');
-  await expect.poll(async () => (await frame.locator('.boxes').evaluate(el => getComputedStyle(el).gridTemplateColumns)).split(' ').length).toBe(2);
+  await expect(boxes).toHaveCSS('grid-template-columns', /^\S+px \S+px$/);
   await page.locator('#reset-code').click();
-  await expect.poll(async () => (await frame.locator('.boxes').evaluate(el => getComputedStyle(el).gridTemplateColumns)).split(' ').length).toBe(1);
+  await expect(boxes).toHaveCSS('grid-template-columns', /^\S+px$/);
 });
 
 test('条件付きCSSとカスケードレイヤーの実例を編集して比較できる', async ({ page }) => {
@@ -91,4 +92,45 @@ test('自動グリッドは狭い幅でも内容をはみ出させず、列数�
   await page.locator('#preview-width').selectOption('240px');
   await expect.poll(async () => (await frame.locator('.boxes').evaluate(el => getComputedStyle(el).gridTemplateColumns)).split(' ').length).toBe(1);
   expect(await frame.locator('html').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+});
+
+test('必須と形式違いを ValidityState で区別できる', async ({ page }) => {
+  const frame = await open(page, 'html-attr-email-validation');
+  const email = frame.getByLabel('メールアドレス（必須）');
+  await expect(email).toHaveJSProperty('willValidate', true);
+  expect(await email.evaluate(input => input.validity.valueMissing)).toBe(true);
+
+  await email.fill('abc');
+  expect(await email.evaluate(input => input.validity.valueMissing)).toBe(false);
+  expect(await email.evaluate(input => input.validity.typeMismatch)).toBe(true);
+  expect(await email.evaluate(input => input.validationMessage)).not.toBe('');
+
+  await email.fill('name@example.com');
+  expect(await email.evaluate(input => input.checkValidity())).toBe(true);
+  expect(await email.evaluate(input => input.validationMessage)).toBe('');
+  await expect(page.locator('#guide-js')).toContainText('input.validity');
+});
+
+test('送信時の標準検証は form 属性で関連付けたボタンにも働き、formnovalidate で省略できる', async ({ page }) => {
+  let frame = await open(page, 'html-attr-form-owner');
+  const submit = frame.getByRole('button', { name: '入力をチェック' });
+  expect(await submit.evaluate(button => button.form.id)).toBe('signup');
+  await submit.click();
+  await expect(frame.getByLabel('名前（必須）')).toBeFocused();
+
+  frame = await open(page, 'html-attr-novalidate');
+  await frame.getByRole('button', { name: '確定' }).click();
+  await expect(frame.locator('dialog')).toBeVisible();
+  expect(await frame.locator('form').evaluate(form => form.checkValidity())).toBe(false);
+  await frame.getByRole('button', { name: '下書き' }).click();
+  await expect(frame.locator('dialog')).toBeHidden();
+});
+
+test(':user-invalid は空欄の初期表示では一致せず、送信を試してから一致する', async ({ page }) => {
+  const frame = await open(page, 'css-user-invalid');
+  const input = frame.getByLabel('メールアドレス（必須）');
+  expect(await input.evaluate(element => element.matches(':invalid'))).toBe(true);
+  await expect(input).toHaveCSS('border-top-color', 'rgb(183, 200, 170)');
+  await frame.getByRole('button', { name: '入力をチェック' }).click();
+  await expect(input).toHaveCSS('border-top-color', 'rgb(166, 60, 57)');
 });

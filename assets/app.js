@@ -17,14 +17,11 @@ let editing = 'html';
 let draft = { html: '', css: '' };
 let triggerElement;
 let toastTimer;
-const mobileQuery = matchMedia('(max-width: 720px)');
+const mobileQuery = matchMedia('(max-width: 920px)');
 
 hydrateIcons();
 setupTheme();
 $('#all-count').textContent = cards.length;
-$('#html-count').textContent = cards.filter(card => card.type === 'html' && card.kind !== 'attribute').length;
-$('#attribute-count').textContent = cards.filter(card => card.kind === 'attribute').length;
-$('#css-count').textContent = cards.filter(card => card.type === 'css').length;
 $('#category-nav').innerHTML = categories.filter(category => category.id !== 'all').map(category => `<button class="category-button" data-category="${category.id}" aria-pressed="false">${icon(category.icon)}${category.label}<span class="category-count">${cards.filter(card => card.category === category.id).length}</span></button>`).join('');
 
 function readBookmarks() {
@@ -48,7 +45,7 @@ function setupTheme() {
   function apply(theme) {
     const dark = theme === 'dark';
     document.documentElement.dataset.theme = theme;
-    $('meta[name="theme-color"]').content = dark ? '#111a16' : '#f7f8f4';
+    $('meta[name="theme-color"]').content = dark ? '#161618' : '#f5f5f7';
     button.setAttribute('aria-checked', dark);
     button.title = `${dark ? 'ライト' : 'ダーク'}モードに切り替える`;
     button.innerHTML = `${icon(dark ? 'moon' : 'sun')}<span class="theme-label">${dark ? 'ダーク' : 'ライト'}</span>`;
@@ -160,9 +157,7 @@ function makePreview(html, css, compact = false) {
 function updateChrome() {
   const currentCategory = categories.find(category => category.id === state.category);
   const title = state.view === 'saved' ? 'マイコレクション' : state.category === 'all' ? 'すべてのカード' : currentCategory.label;
-  $('#library-title').firstChild.textContent = `${title} `;
-  $('#breadcrumb-current').textContent = title;
-  $('#total-badge').textContent = filtered.length;
+  $('#library-title').textContent = title;
   $('#saved-count').textContent = bookmarks.size;
   for (const button of $$('[data-type]')) {
     button.classList.toggle('active', button.dataset.type === state.type);
@@ -284,13 +279,18 @@ async function copy(text, successMessage) {
 }
 
 function toggleSidebar(open) {
+  const sidebar = $('#sidebar');
+  const menu = $('#menu-toggle');
+  const restoreFocus = !open && mobileQuery.matches && sidebar.classList.contains('open');
   open = mobileQuery.matches && open;
-  $('#sidebar').classList.toggle('open', open);
-  $('#sidebar').inert = mobileQuery.matches && !open;
+  sidebar.classList.toggle('open', open);
+  sidebar.inert = mobileQuery.matches && !open;
+  $('.workspace').inert = open;
+  $('.skip-link').inert = open;
   $('#sidebar-shade').hidden = !open;
-  $('#menu-toggle').setAttribute('aria-expanded', open);
-  $('#menu-toggle').setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-  if (open) $('#sidebar .brand').focus();
+  menu.setAttribute('aria-expanded', open);
+  if (open) $('#close-sidebar').focus();
+  if (restoreFocus) menu.focus({ preventScroll: true });
 }
 
 function openAbout() {
@@ -408,14 +408,15 @@ function setupEvents() {
     const bounds = dialog.getBoundingClientRect();
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   });
-  $('#menu-toggle').addEventListener('click', () => toggleSidebar(!$('#sidebar').classList.contains('open')));
+  $('#menu-toggle').addEventListener('click', () => toggleSidebar(true));
+  $('#close-sidebar').addEventListener('click', () => toggleSidebar(false));
   $('#sidebar-shade').addEventListener('click', () => toggleSidebar(false));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && $('#sidebar').classList.contains('open')) {
       toggleSidebar(false);
-      $('#menu-toggle').focus();
+      return;
     }
-    if (event.key === '/' && !event.ctrlKey && !event.metaKey && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName) && !$$('dialog[open]').length) {
+    if (event.key === '/' && !event.ctrlKey && !event.metaKey && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName) && !$$('dialog[open], .sidebar.open').length) {
       event.preventDefault();
       $('#search').focus();
     }

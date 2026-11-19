@@ -1,7 +1,7 @@
 {
   "source": "MDN browser-compat-data",
   "version": "8.1.9",
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-19",
   "methodology": "接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。ARIAなど属性自体の導入版がBCDにない項目は「版数未収録」と表示し、未対応とは区別する。",
   "cards": {
     "html-details": {
@@ -8403,6 +8403,375 @@
       "experimental": false,
       "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/td.json",
       "spec": "https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-colspan"
+    },
+    "html-attr-form-submission": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/form.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method"
+    },
+    "html-attr-enctype": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3",
+          "date": "2007-10-26",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "2",
+          "date": "2008-07-11",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/form.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype"
+    },
+    "html-attr-form-owner": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "1",
+          "date": "2003-06-23",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "1",
+          "date": "2007-06-29",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fae-form"
+    },
+    "html-attr-novalidate": {
+      "status": "established",
+      "tracked": true,
+      "since": "2017-03-27",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "10",
+          "date": "2011-03-08",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "10.1",
+          "date": "2017-03-27",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "10.3",
+          "date": "2017-03-27",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/form.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate"
+    },
+    "html-attr-email-validation": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "5",
+          "date": "2010-05-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "3",
+          "date": "2009-06-17",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input/email.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#email-state-(type=email)"
+    },
+    "html-label": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/label.json",
+      "spec": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+    },
+    "html-option": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": true,
+      "support": {
+        "chrome": {
+          "version": "1",
+          "date": "2008-12-11",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "1",
+          "date": "2004-11-09",
+          "approximate": false
+        },
+        "safari": {
+          "version": "≤4",
+          "date": "2009-06-08",
+          "approximate": true
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "≤3.2",
+          "date": "2010-04-03",
+          "approximate": true
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/option.json",
+      "spec": "https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"
+    },
+    "css-invalid": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "10",
+          "date": "2011-03-08",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "4",
+          "date": "2011-03-22",
+          "approximate": false
+        },
+        "safari": {
+          "version": "5",
+          "date": "2010-06-07",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "18",
+          "date": "2012-06-27",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/invalid.json",
+      "spec": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-invalid"
+    },
+    "css-user-invalid": {
+      "status": "established",
+      "tracked": true,
+      "since": "2023-11-02",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "119",
+          "date": "2023-10-31",
+          "approximate": false
+        },
+        "edge": {
+          "version": "119",
+          "date": "2023-11-02",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "88",
+          "date": "2021-04-19",
+          "approximate": false
+        },
+        "safari": {
+          "version": "16.5",
+          "date": "2023-05-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "119",
+          "date": "2023-10-31",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "16.5",
+          "date": "2023-05-18",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/selectors/user-invalid.json",
+      "spec": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-user-invalid"
     }
   }
 }

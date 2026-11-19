@@ -147,12 +147,23 @@ test('並び替え・説明・不正な保存データに対応する', async ({
 test('画面幅に収まり、メニューとダイアログが表示できる', async ({ page }, testInfo) => {
   await ready(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  const menu = page.getByRole('button', { name: 'メニューを開く' });
+  if (testInfo.project.name === 'mobile') {
+    await menu.focus();
+    await menu.press('Enter');
+    await expect(page.getByRole('button', { name: 'メニューを閉じる' })).toBeFocused();
+    await expect(page.locator('.workspace')).toHaveJSProperty('inert', true);
+    await page.keyboard.press('Escape');
+    await expect(menu).toBeFocused();
+  }
   await nav(page, '[data-category="forms"]');
   if (testInfo.project.name === 'mobile') {
-    await expect(page.locator('#menu-toggle')).toHaveAttribute('aria-expanded', 'false');
+    await expect(menu).toHaveAttribute('aria-expanded', 'false');
     await expect(page.locator('#sidebar-shade')).toBeHidden();
   }
-  await page.locator('.try-button').first().click();
+  const tryButton = page.locator('.try-button').first();
+  expect((await tryButton.boundingBox()).height).toBeGreaterThanOrEqual(44);
+  await tryButton.click();
   const bounds = await page.locator('#playground').boundingBox();
   expect(bounds.x).toBeGreaterThanOrEqual(0);
   expect(bounds.x + bounds.width).toBeLessThanOrEqual(page.viewportSize().width);
@@ -182,7 +193,7 @@ test('OSのテーマに追従し、手動選択は再読み込みとOS変更の�
   await page.emulateMedia({ colorScheme: 'light' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await theme.click();
-  await expect(page.locator('.card').first()).toHaveCSS('background-color', 'rgb(27, 40, 32)');
+  await expect(page.locator('.card').first()).toHaveCSS('background-color', 'rgb(36, 36, 38)');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.emulateMedia({ colorScheme: 'dark' });
@@ -199,7 +210,7 @@ test('テーマ変更後も検索とコード編集が動き、利用者向け�
   await page.locator('#search').fill('border-radius');
   await expect(page.locator('.card')).toHaveCount(1);
   await page.locator('.try-button').click();
-  await expect(page.locator('#code-editor')).toHaveCSS('background-color', 'rgb(27, 40, 32)');
+  await expect(page.locator('#code-editor')).toHaveCSS('background-color', 'rgb(36, 36, 38)');
   await page.getByRole('tab', { name: 'HTML', exact: true }).click();
   await page.locator('#code-editor').fill('<p>テーマを変えて実験</p>');
   await expect(page.frameLocator('#live-preview').locator('p')).toHaveText('テーマを変えて実験');

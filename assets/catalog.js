@@ -3,6 +3,7 @@ import { extraElements } from './html-elements.js';
 import { attributes } from './html-attributes.js';
 import { extraCss } from './css-examples.js';
 import { extraAttributes } from './html-attribute-examples.js';
+import { formExamples } from './form-examples.js';
 
 // 説明と実行可能な最小例。互換性は scripts/compat.mjs で MDN BCD から生成する。
 export const categories = [
@@ -398,7 +399,7 @@ export const cards = [
   h('form', 'form', 'forms', '入力をまとめて送信する仕組み。ブラウザー標準の入力チェックも。',
     '<form>\n  <label for="contact">メールアドレス（必須）</label>\n  <input id="contact" name="email" type="email" required>\n  <button type="submit">入力をチェック</button>\n</form>', {
       css: 'form { display: grid; gap: 8px; font-size: 11px; }\ninput { padding: 6px; border: 1px solid #c0d0b0; border-radius: 5px; }\nbutton { justify-self: start; }',
-      usage: 'action に送信先、method に方式を指定します。送信に使う入力には name が必要です。required や type="email" の検証はブラウザーが行いますが、サーバーでも検証が必要です。',
+      usage: 'form は関連する入力欄と送信ボタンをまとめます。label の for と入力の id をそろえ、送る入力には name を付けます。action に送信先、method に方式を指定し、フォームの入れ子は避けます。required や type="email" は入力欄へ指定し、ブラウザーとサーバーの両方で検証します。',
       note: '空欄やメールアドレス以外を入れて送信を押すと、標準の入力チェックを試せます。この図鑑ではフォーム送信自体をブロックしているため、実際の登録や送信は行いません。',
       seo: 'フォームは主に利用者の入力操作のためのものです。送信後だけ表示される情報を、検索エンジンが必ず取得できるとは限りません。',
     }),
@@ -425,6 +426,7 @@ export const cards = [
   ...attributes,
   ...extraCss,
   ...extraAttributes,
+  ...formExamples,
 ];
 
 export const cardById = new Map(cards.map(card => [card.id, card]));
