@@ -1,8 +1,11 @@
 import { contactParts } from './contact-parts.js';
+import { labExamples } from './practice-lab-data.js';
 
 export const practiceExamples = [
+  ...labExamples,
   {
     id: 'contact',
+    group: 'pages',
     title: '問い合わせフォーム',
     description: '必須入力と形式チェックを試し、ブラウザー標準の表示と欄ごとのエラー表示を比べます。',
     icon: 'mail',
@@ -11,6 +14,7 @@ export const practiceExamples = [
   },
   {
     id: 'search',
+    group: 'pages',
     title: '商品一覧の検索・絞り込み',
     description: '商品名やカテゴリーで絞り込み、0件のときの表示やURLから条件を復元する動きを試します。',
     icon: 'search',
@@ -40,6 +44,7 @@ export const practiceExamples = [
   },
   {
     id: 'dialog',
+    group: 'parts',
     title: '削除前の確認ダイアログ',
     description: '削除の前に確認を挟みます。取消・Esc・削除後と、閉じたあとのフォーカスを比べます。',
     icon: 'shield',
@@ -69,6 +74,7 @@ export const practiceExamples = [
   },
   {
     id: 'faq',
+    group: 'parts',
     title: 'よくある質問',
     description: '質問を開閉し、回答を一つずつ開く設定と、複数を開いたまま読む設定を比べます。',
     icon: 'help',
@@ -98,6 +104,7 @@ export const practiceExamples = [
   },
   {
     id: 'layout',
+    group: 'pages',
     title: 'レスポンシブな記事一覧',
     description: 'プレビューの幅を変え、同じ記事カードが1列・2列・3列に並び替わる様子を見ます。',
     icon: 'grid',
@@ -127,6 +134,7 @@ export const practiceExamples = [
   },
   {
     id: 'progress',
+    group: 'pages',
     title: '公開前の進捗チェックリスト',
     description: '公開前の確認項目をチェックし、完了件数と進捗バーが連動する様子を試します。',
     icon: 'file',

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('図鑑から実践デモを開き、選んだパーツの解説と関連カードを読める', async ({ page }) => {
   await page.goto('./');
   await page.getByRole('link', { name: '実践デモ' }).click();
-  await expect(page.locator('.practice-card')).toHaveCount(6);
+  await expect(page.getByRole('heading', { name: '実践デモ', exact: true })).toBeVisible();
   await page.getByRole('link', { name: /問い合わせフォーム/ }).click();
   await expect(page).toHaveURL(/\/html_css_example\/form-demo\.html$/);
 

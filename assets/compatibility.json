@@ -1,7 +1,7 @@
 {
   "source": "MDN browser-compat-data",
   "version": "8.1.9",
-  "checkedAt": "2026-11-19",
+  "checkedAt": "2026-11-21",
   "methodology": "接頭辞・フラグ・部分対応を除き、Chrome / Edge / Firefox / Safari（デスクトップ）の対応が揃った日。30か月以上前なら安定対応。それ以降は新しく対応。公式Baselineではなく、この図鑑独自の目安。標準化・誕生の年月ではない。複合的な例の全構文の対応は保証しない。ARIAなど属性自体の導入版がBCDにない項目は「版数未収録」と表示し、未対応とは区別する。",
   "cards": {
     "html-details": {
@@ -4960,6 +4960,47 @@
       "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input/date.json",
       "spec": "https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)"
     },
+    "html-attr-range": {
+      "status": "established",
+      "tracked": true,
+      "since": "2015-07-29",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "4",
+          "date": "2010-01-25",
+          "approximate": false
+        },
+        "edge": {
+          "version": "12",
+          "date": "2015-07-29",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "23",
+          "date": "2013-08-06",
+          "approximate": false
+        },
+        "safari": {
+          "version": "3.1",
+          "date": "2008-03-18",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "57",
+          "date": "2017-03-16",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "5",
+          "date": "2011-10-12",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/html/elements/input/range.json",
+      "spec": "https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)"
+    },
     "html-attr-required": {
       "status": "established",
       "tracked": true,
@@ -8034,6 +8075,47 @@
       "experimental": false,
       "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/types/length.json",
       "spec": "https://drafts.csswg.org/css-values/#lengths"
+    },
+    "css-conic-gradient": {
+      "status": "established",
+      "tracked": true,
+      "since": "2020-11-17",
+      "approximate": false,
+      "support": {
+        "chrome": {
+          "version": "69",
+          "date": "2018-09-04",
+          "approximate": false
+        },
+        "edge": {
+          "version": "79",
+          "date": "2020-01-15",
+          "approximate": false
+        },
+        "firefox": {
+          "version": "83",
+          "date": "2020-11-17",
+          "approximate": false
+        },
+        "safari": {
+          "version": "12.1",
+          "date": "2019-03-25",
+          "approximate": false
+        },
+        "chrome_android": {
+          "version": "69",
+          "date": "2018-09-04",
+          "approximate": false
+        },
+        "safari_ios": {
+          "version": "12.2",
+          "date": "2019-03-25",
+          "approximate": false
+        }
+      },
+      "experimental": false,
+      "source": "https://github.com/mdn/browser-compat-data/blob/v8.1.9/css/types/gradient.json",
+      "spec": "https://drafts.csswg.org/css-images-4/#conic-gradients"
     },
     "css-minmax": {
       "status": "established",

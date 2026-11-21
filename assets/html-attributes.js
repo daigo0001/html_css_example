@@ -145,6 +145,16 @@ export const attributes = [
       usage: 'text、email、date、color、numberなど、入力の目的に合う種類を指定します。未対応のtypeは通常textとして扱われます。UIはOSやブラウザーによって異なります。',
       note: '互換性の表は日付入力type="date"のものです。各typeの対応時期は同一ではないため、用途ごとにMDNで確認してください。',
     }),
+  a('range', 'type="range"', '範囲の中から値を選ぶ、キーボードでも操作できるスライダー。',
+    '<label for="tone-level">色の強さ（0〜100）</label>\n<input id="tone-level" type="range" min="0" max="100" step="1" value="50">', {
+      category: 'forms',
+      bcd: 'html.elements.input.type_range',
+      mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/input/range',
+      css: 'label { display: block; margin-bottom: 6px; font-size: 13px; }\ninput { width: 100%; accent-color: #668650; }',
+      usage: 'min と max で上下限、step で刻み、value で初期値を指定します。input イベントで操作中の値を受け取れます。関連する label や現在値の表示も用意すると、何を調整しているか伝わります。',
+      js: 'const range = document.querySelector("#tone-level");\nrange.addEventListener("input", () => {\n  console.log(range.valueAsNumber);\n});',
+      note: 'つまみを押して左右の矢印キーを試せます。実践デモの「色を調整するスライダー」では複数の値を色見本へ反映しています。',
+    }),
   a('required', 'required', '入力や選択を必須にする。エラー文を見せる前に、必須も明記しよう。',
     '<form><label for="required-name">名前（必須）</label>\n  <input id="required-name" required>\n  <button>入力をチェック</button>\n</form>', {
       bcd: 'html.elements.input.required', mdn: 'https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Attributes/required',

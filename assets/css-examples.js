@@ -319,6 +319,14 @@ export const extraCss = [
       usage: 'px はCSSピクセル、em は文字サイズ基準、rem はルート文字サイズ基準、vw はビューポート幅の1%です。em は font-size に使うと親の文字サイズ、他の長さでは通常その要素の文字サイズが基準です。',
       note: 'プレビュー幅を変えるとvwの文字が変化します。vwだけの文字サイズは小さくなりすぎることがあるので、clamp()などで範囲も検討します。対応表は長さ型全体で、個々の単位の導入版とは異なります。',
     }),
+  c('conic-gradient', 'conic-gradient()', 'text', '中心を軸に角度方向へ色を変える。境界を区切ると円グラフにも使える。',
+    '<div class="pie" aria-hidden="true"></div>\n<ul><li>検索 50%</li><li>直接アクセス 30%</li><li>外部リンク 20%</li></ul>',
+    '.pie {\n  width: 110px;\n  aspect-ratio: 1;\n  border-radius: 50%;\n  margin-inline: auto;\n  background: conic-gradient(\n    #2469d0 0% 50%,\n    #117d6a 50% 80%,\n    #ad4d91 80% 100%\n  );\n}\nul { margin-block: 8px 0; font-size: 12px; }', {
+      bcd: 'css.types.gradient.conic-gradient',
+      mdn: 'https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Values/gradient/conic-gradient',
+      usage: '0〜100% が一周します。各色を同じ位置で切り替えると境界がはっきりします。円グラフは累積した割合を色の境界に使い、同じ数値を表やリストでも伝えます。',
+      note: '色の区間を変えると円の分割が変わります。実践デモでは件数から円グラフと明細を一緒に更新できます。',
+    }),
   c('minmax', 'minmax() / auto-fit', 'layout', '入るだけの列を自動で作る。メディアクエリーなしの可変グリッド。',
     '<div class="boxes"><span>HTML</span><span>CSS</span><span>属性</span><span>実例</span></div>',
     '.boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 110px), 1fr)); gap: 8px; }' + boxStyle, {

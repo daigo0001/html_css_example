@@ -1,23 +1,37 @@
 import { hydrateIcons, icon } from './icons.js';
 import { practiceExamples } from './practice-data.js';
 import { mountPartsList, partTag } from './practice-parts.js';
+import { setupComponents } from './practice-components.js';
+import { setupPages } from './practice-pages.js';
+import { collectionHref, collectionParams } from './practice-navigation.js';
 
 const $ = selector => document.querySelector(selector);
 const params = new URLSearchParams(location.search);
 const example = practiceExamples.find(item => item.id === params.get('demo') && !item.href);
 
 function renderCollection() {
-  const cards = $('#practice-cards');
-  for (const item of practiceExamples) {
+  const browser = $('#practice-browser');
+  const groups = [...browser.querySelectorAll('[data-practice-group]')];
+  const search = $('#practice-search-input');
+  const categories = {
+    parts: $('#practice-parts-category'),
+    pages: $('#practice-pages-category'),
+  };
+  const results = $('#practice-count');
+  const empty = $('#practice-empty');
+  const normalize = value => value.normalize('NFKC').toLowerCase();
+  let group = collectionParams(params).get('group') || 'all';
+  search.value = params.get('find') || '';
+
+  const entries = practiceExamples.map(item => {
     const entry = document.createElement('li');
     const link = document.createElement('a');
     link.className = 'practice-card';
-    link.href = item.href || `./practice.html?demo=${item.id}`;
 
     const cover = document.createElement('div');
     cover.className = 'practice-card-top';
     cover.innerHTML = `<span class="practice-card-icon">${icon(item.icon)}</span>${icon('arrow-right')}`;
-    const title = document.createElement('h2');
+    const title = document.createElement('h3');
     title.textContent = item.title;
     const description = document.createElement('p');
     description.textContent = item.description;
@@ -28,8 +42,44 @@ function renderCollection() {
     tags.append(...topics.slice(0, 4).map(partTag));
     link.append(cover, title, description, tags);
     entry.append(link);
-    cards.append(entry);
+    categories[item.group].querySelector('ul').append(entry);
+    const content = normalize([item.title, item.description, ...topics].join(' '));
+    return { item, entry, link, content };
+  });
+
+  function update() {
+    const filters = new URLSearchParams({ group, find: search.value });
+    const query = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+    const totals = { parts: 0, pages: 0 };
+    for (const control of groups) {
+      control.setAttribute('aria-pressed', String(control.dataset.practiceGroup === group));
+    }
+    for (const { item, entry, link, content } of entries) {
+      entry.hidden = (group !== 'all' && group !== item.group) || !query.every(term => content.includes(term));
+      if (entry.hidden) continue;
+
+      const href = new URL(item.href || `./practice.html?demo=${item.id}`, location.href);
+      for (const [key, value] of collectionParams(filters)) href.searchParams.set(key, value);
+      link.href = href.href;
+      totals[item.group]++;
+    }
+    for (const [key, category] of Object.entries(categories)) category.hidden = totals[key] === 0;
+    const total = totals.parts + totals.pages;
+    results.textContent = `${total}件のデモ`;
+    empty.hidden = total !== 0;
+    const current = new URL(collectionHref(filters), location.href);
+    if (current.href !== location.href) history.replaceState(null, '', current);
   }
+
+  search.addEventListener('input', update);
+  for (const control of groups) {
+    control.addEventListener('click', () => {
+      group = control.dataset.practiceGroup;
+      update();
+    });
+  }
+  browser.hidden = false;
+  update();
 }
 
 function setupSearch() {
@@ -172,11 +222,13 @@ const setupExample = {
   faq: setupFaq,
   layout: setupLayout,
   progress: setupProgress,
+  ...setupComponents,
+  ...setupPages,
 };
 
 function renderExample(item) {
   document.title = `${item.title} — Web Notes`;
-  $('#practice-back').href = './practice.html';
+  $('#practice-back').href = collectionHref(params);
   $('#practice-back-label').textContent = '実践デモ一覧へ';
   $('#example-title').textContent = item.title;
   $('#example-description').textContent = item.description;
@@ -184,6 +236,7 @@ function renderExample(item) {
   stage.append($(`#practice-${item.id}`).content.cloneNode(true));
   $('#practice-collection').hidden = true;
   $('#practice-example').hidden = false;
+  setupExample[item.id](stage, params);
 
   const targets = [...stage.querySelectorAll('[data-practice-part]')];
   const title = $('#practice-part-title');
@@ -210,7 +263,6 @@ function renderExample(item) {
   stage.addEventListener('focusin', selectFromPreview);
   stage.addEventListener('change', selectFromPreview);
   selectPart(Object.keys(item.parts)[0]);
-  setupExample[item.id]();
 }
 
 if (example) renderExample(example);

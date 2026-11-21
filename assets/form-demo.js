@@ -1,8 +1,10 @@
 import { hydrateIcons } from './icons.js';
 import { contactParts as parts } from './contact-parts.js';
 import { mountPartsList } from './practice-parts.js';
+import { collectionHref } from './practice-navigation.js';
 
 hydrateIcons();
+document.querySelector('.demo-back').href = collectionHref(new URLSearchParams(location.search));
 
 const flagDescriptions = {
   valueMissing: '必須欄が空',

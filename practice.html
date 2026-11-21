@@ -6,11 +6,13 @@
   <meta name="theme-color" content="#f5f5f7">
   <meta name="description" content="実際の画面を操作し、フォーム・検索・ダイアログなどに使われているHTMLとCSSのパーツを確かめる実践デモ。">
   <title>実践デモ — Web Notes</title>
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   <script src="./assets/theme.js"></script>
   <link rel="stylesheet" href="./assets/styles.css">
   <link rel="stylesheet" href="./assets/themes.css">
   <link rel="stylesheet" href="./assets/practice.css">
+  <link rel="stylesheet" href="./assets/practice-labs.css">
   <script type="module" src="./assets/practice.js"></script>
 </head>
 <body class="practice-page">
@@ -28,7 +30,28 @@
         <h1 id="practice-title">実践デモ</h1>
         <p>実際の画面を操作して、どのHTMLやCSSが使われているか確かめましょう。</p>
       </header>
-      <ul class="practice-cards" id="practice-cards"></ul>
+      <div class="practice-browser" id="practice-browser" hidden>
+        <div class="practice-groups" role="group" aria-label="デモの種類">
+          <button type="button" data-practice-group="all" aria-pressed="true">すべて</button>
+          <button type="button" data-practice-group="parts" aria-pressed="false">Webパーツ</button>
+          <button type="button" data-practice-group="pages" aria-pressed="false">Webページ</button>
+        </div>
+        <div class="search-box practice-search-box">
+          <span data-icon="search"></span>
+          <label class="sr-only" for="practice-search-input">実践デモを検索</label>
+          <input type="search" id="practice-search-input" placeholder="例：プログレス、range" autocomplete="off">
+        </div>
+      </div>
+      <p class="practice-count practice-status" id="practice-count" role="status"></p>
+      <p class="practice-empty" id="practice-empty" hidden>別の名前やパーツで検索してください。</p>
+      <section class="practice-category" id="practice-parts-category" aria-labelledby="practice-parts-title" hidden>
+        <h2 id="practice-parts-title">Webパーツ</h2>
+        <ul class="practice-cards" id="practice-parts-cards"></ul>
+      </section>
+      <section class="practice-category" id="practice-pages-category" aria-labelledby="practice-pages-title" hidden>
+        <h2 id="practice-pages-title">Webページ</h2>
+        <ul class="practice-cards" id="practice-pages-cards"></ul>
+      </section>
       <noscript>
         <p>デモの一覧を表示するには JavaScript を有効にしてください。</p>
         <a href="./form-demo.html">問い合わせフォームを開く</a>
@@ -189,6 +212,383 @@
       <label class="practice-check" data-practice-part="checks"><input type="checkbox">画像の代替テキストを確認した</label>
     </fieldset>
     <button class="text-button" id="reset-tasks" type="button">チェックをリセット</button>
+  </template>
+  <template id="practice-color">
+    <header class="practice-sample-heading"><h2 id="sample-title">配色を調整する</h2></header>
+    <div class="lab-color-panel" data-practice-part="color">
+      <div class="lab-swatch" id="lab-swatch" aria-hidden="true"></div>
+      <div class="lab-color-readout">
+        <span>背景色</span>
+        <code id="color-css"></code>
+      </div>
+    </div>
+    <fieldset class="lab-controls lab-sliders" id="color-controls" data-practice-part="range">
+      <legend>色の調整（0〜100）</legend>
+      <div class="lab-slider-row">
+        <label for="hue-range">色相</label>
+        <input id="hue-range" type="range" min="0" max="100" step="1" value="58">
+        <output data-practice-part="values" for="hue-range" aria-live="off">58</output>
+      </div>
+      <div class="lab-slider-row">
+        <label for="saturation-range">彩度</label>
+        <input id="saturation-range" type="range" min="0" max="100" step="1" value="72">
+        <output data-practice-part="values" for="saturation-range" aria-live="off">72</output>
+      </div>
+      <div class="lab-slider-row">
+        <label for="lightness-range">明度</label>
+        <input id="lightness-range" type="range" min="0" max="100" step="1" value="55">
+        <output data-practice-part="values" for="lightness-range" aria-live="off">55</output>
+      </div>
+    </fieldset>
+    <button class="text-button" id="color-reset" type="button">色をリセット</button>
+  </template>
+
+  <template id="practice-transfer">
+    <header class="practice-sample-heading"><h2 id="sample-title">写真の書き出し</h2></header>
+    <div class="lab-progress-box" data-practice-part="progress">
+      <div class="lab-between">
+        <label for="transfer-progress">処理の進行度</label>
+        <strong class="lab-number" id="transfer-percent">0%</strong>
+      </div>
+      <progress id="transfer-progress" max="100" value="0"></progress>
+    </div>
+    <p class="lab-clock-status practice-status" role="status" data-clock-status data-practice-part="status"></p>
+    <div class="lab-actions" data-practice-part="actions">
+      <button class="primary-button" type="button" data-clock-toggle>処理を開始</button>
+      <button class="outline-button" type="button" data-clock-reset>リセット</button>
+    </div>
+  </template>
+
+  <template id="practice-timer">
+    <header class="practice-sample-heading"><h2 id="sample-title">作業タイマー</h2></header>
+    <div class="lab-timer-face" data-practice-part="time">
+      <span>残り時間</span>
+      <p class="lab-number" id="timer-display" role="timer" aria-label="残り時間">00:10</p>
+    </div>
+    <p class="lab-clock-status practice-status" role="status" data-clock-status></p>
+    <div class="practice-field lab-select" data-practice-part="duration">
+      <label for="timer-duration">タイマーの長さ</label>
+      <select id="timer-duration" data-clock-duration>
+        <option value="10">10秒</option>
+        <option value="25">25秒</option>
+        <option value="60">1分</option>
+      </select>
+    </div>
+    <div class="lab-actions" data-practice-part="actions">
+      <button class="primary-button" type="button" data-clock-toggle>タイマーを開始</button>
+      <button class="outline-button" type="button" data-clock-reset>リセット</button>
+    </div>
+  </template>
+
+  <template id="practice-pie">
+    <header class="practice-sample-heading"><h2 id="sample-title">アクセス元の内訳</h2></header>
+    <div id="pie-breakdown"></div>
+    <fieldset class="lab-controls lab-sliders" id="pie-controls" data-practice-part="values">
+      <legend>アクセス件数（0〜100）</legend>
+      <div class="lab-slider-row">
+        <label for="pie-search">検索</label>
+        <input id="pie-search" type="range" min="0" max="100" step="1" value="50">
+        <output for="pie-search" aria-live="off">50</output>
+      </div>
+      <div class="lab-slider-row">
+        <label for="pie-direct">直接アクセス</label>
+        <input id="pie-direct" type="range" min="0" max="100" step="1" value="30">
+        <output for="pie-direct" aria-live="off">30</output>
+      </div>
+      <div class="lab-slider-row">
+        <label for="pie-referral">外部リンク</label>
+        <input id="pie-referral" type="range" min="0" max="100" step="1" value="20">
+        <output for="pie-referral" aria-live="off">20</output>
+      </div>
+    </fieldset>
+  </template>
+
+  <template id="lab-breakdown-template">
+    <div class="lab-breakdown">
+      <figure class="lab-chart-figure">
+        <div class="lab-pie" aria-hidden="true"></div>
+        <figcaption class="lab-chart-caption"></figcaption>
+      </figure>
+      <table class="lab-table lab-breakdown-table">
+        <caption class="sr-only">アクセス元の件数と割合</caption>
+        <thead><tr><th scope="col">流入元</th><th scope="col">件数</th><th scope="col">割合</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="lab-color-key lab-key-search" aria-hidden="true"></span>検索</th><td></td><td></td></tr>
+          <tr><th scope="row"><span class="lab-color-key lab-key-direct" aria-hidden="true"></span>直接アクセス</th><td></td><td></td></tr>
+          <tr><th scope="row"><span class="lab-color-key lab-key-referral" aria-hidden="true"></span>外部リンク</th><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </template>
+
+  <template id="practice-loading">
+    <header class="practice-sample-heading"><h2 id="sample-title">お知らせを読み込む</h2></header>
+    <div class="lab-load-request" data-practice-part="request">
+      <div class="practice-field lab-select">
+        <label for="loading-response">応答のシナリオ</label>
+        <select id="loading-response">
+          <option value="success">成功（2件）</option>
+          <option value="empty">成功（0件）</option>
+          <option value="error">失敗</option>
+        </select>
+      </div>
+      <div class="lab-actions"><button class="primary-button" type="button" id="loading-action">読み込む</button></div>
+    </div>
+    <div class="lab-loading-state" data-practice-part="pending">
+      <span class="lab-spinner" id="loading-spinner" aria-hidden="true" hidden></span>
+      <p class="practice-status" id="loading-status" role="status">読み込みを始められます。</p>
+    </div>
+    <section class="lab-response" id="loading-result" data-practice-part="result" aria-label="お知らせの結果" aria-busy="false">
+      <div class="lab-skeleton" id="loading-skeleton" aria-hidden="true" hidden><span></span><span></span></div>
+      <ul class="lab-notices" id="loading-items" hidden>
+        <li><strong>メンテナンスのお知らせ</strong><span>日曜 09:00〜09:30</span></li>
+        <li><strong>今月の新着ガイド</strong><span>配色とアクセシビリティ</span></li>
+      </ul>
+      <p class="practice-empty" id="loading-empty" hidden>新しいお知らせはありません。</p>
+    </section>
+    <p class="practice-status lab-explanation">切り替えた応答を約1.5秒後に再現します。</p>
+  </template>
+
+  <template id="practice-cards">
+    <header class="practice-sample-heading"><h2 id="sample-title">制作ノート</h2></header>
+    <div class="lab-between lab-card-filters" data-practice-part="filter">
+      <label class="practice-check"><input type="checkbox" id="article-saved-only">しおりのみ</label>
+      <p class="practice-status" id="article-card-count" role="status">3件の記事</p>
+    </div>
+    <div class="lab-article-cards">
+      <article class="lab-mini-card" data-practice-part="card">
+        <div class="lab-card-cover lab-cover-spacing"><span data-icon="layout"></span></div>
+        <div class="lab-card-copy">
+          <h3>余白を揃える</h3>
+          <p>間隔をそろえて情報のまとまりを伝えます。</p>
+          <button type="button" class="text-button lab-bookmark" data-practice-part="bookmark" aria-pressed="false" aria-label="余白を揃えるのしおり">
+            <span data-icon="bookmark"></span><span class="lab-save-label">しおり</span>
+          </button>
+        </div>
+      </article>
+      <article class="lab-mini-card" data-practice-part="card">
+        <div class="lab-card-cover lab-cover-type"><span data-icon="type"></span></div>
+        <div class="lab-card-copy">
+          <h3>文字の階層</h3>
+          <p>見出し、本文、補足の大きさを決めます。</p>
+          <button type="button" class="text-button lab-bookmark" data-practice-part="bookmark" aria-pressed="false" aria-label="文字の階層のしおり">
+            <span data-icon="bookmark"></span><span class="lab-save-label">しおり</span>
+          </button>
+        </div>
+      </article>
+      <article class="lab-mini-card" data-practice-part="card">
+        <div class="lab-card-cover lab-cover-grid"><span data-icon="grid"></span></div>
+        <div class="lab-card-copy">
+          <h3>列数を選ぶ</h3>
+          <p>一覧が使える幅に合わせて列数を変えます。</p>
+          <button type="button" class="text-button lab-bookmark" data-practice-part="bookmark" aria-pressed="false" aria-label="列数を選ぶのしおり">
+            <span data-icon="bookmark"></span><span class="lab-save-label">しおり</span>
+          </button>
+        </div>
+      </article>
+    </div>
+    <p class="practice-empty" id="article-card-empty" hidden>しおりを付けた記事がここに表示されます。</p>
+  </template>
+
+  <template id="practice-pagination">
+    <header class="practice-sample-heading"><h2 id="sample-title">学習ガイドの目次</h2></header>
+    <p class="practice-status lab-pager-count" id="pager-count" data-practice-part="count"></p>
+    <ol class="lab-entries" id="pager-entries" data-practice-part="list">
+      <li><h3>フォームの基本</h3><p>入力欄とラベルを結び付ける。</p></li>
+      <li><h3>ボタンとリンク</h3><p>操作と移動に合う要素を選ぶ。</p></li>
+      <li><h3>CSSの単位</h3><p>画面幅や文字サイズに合わせる。</p></li>
+      <li><h3>配色とコントラスト</h3><p>本文と背景を読みやすくする。</p></li>
+      <li><h3>キーボード操作</h3><p>フォーカスの位置を目で追えるようにする。</p></li>
+      <li><h3>画面の状態を伝える</h3><p>読み込み中や完了の表示を考える。</p></li>
+    </ol>
+    <nav class="lab-pagination" aria-label="記事のページ番号" data-practice-part="nav">
+      <a class="outline-button lab-page-link" id="pager-prev" href="?demo=pagination&page=1">前へ</a>
+      <a class="outline-button lab-page-link" data-page-number="1" href="?demo=pagination&page=1" aria-label="1ページ">1</a>
+      <a class="outline-button lab-page-link" data-page-number="2" href="?demo=pagination&page=2" aria-label="2ページ">2</a>
+      <a class="outline-button lab-page-link" data-page-number="3" href="?demo=pagination&page=3" aria-label="3ページ">3</a>
+      <a class="outline-button lab-page-link" id="pager-next" href="?demo=pagination&page=2">次へ</a>
+    </nav>
+  </template>
+
+  <template id="practice-tabs">
+    <header class="practice-sample-heading"><h2 id="sample-title">アカウントの詳細</h2></header>
+    <div class="lab-tabs" role="tablist" aria-label="アカウントの切り替え" data-practice-part="controls">
+      <button id="tab-overview" type="button" role="tab" aria-selected="true" aria-controls="tabs-overview">概要</button>
+      <button id="tab-activity" type="button" role="tab" aria-selected="false" aria-controls="tabs-activity" tabindex="-1">履歴</button>
+      <button id="tab-settings" type="button" role="tab" aria-selected="false" aria-controls="tabs-settings" tabindex="-1">設定</button>
+    </div>
+    <p class="practice-status lab-tab-hint" data-practice-part="keys">タブにフォーカスしたら、←・→やHome・Endで切り替えられます。</p>
+    <section class="lab-tab-panel" id="tabs-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0" data-practice-part="panel">
+      <h3>概要</h3><p>ここにはアカウント名や利用中のプランを表示します。</p>
+      <dl><dt>表示名</dt><dd>はな</dd><dt>プラン</dt><dd>スタンダード</dd></dl>
+    </section>
+    <section class="lab-tab-panel" id="tabs-activity" role="tabpanel" aria-labelledby="tab-activity" tabindex="0" data-practice-part="panel" hidden>
+      <h3>最近の操作</h3><p><time datetime="2026-11-20">11月20日</time>にプロフィールを更新しました。</p>
+    </section>
+    <section class="lab-tab-panel" id="tabs-settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" data-practice-part="panel" hidden>
+      <h3>通知設定</h3><label class="practice-check"><input type="checkbox" checked>更新情報を画面で受け取る</label>
+    </section>
+  </template>
+
+  <template id="practice-sorting">
+    <header class="practice-sample-heading"><h2 id="sample-title">文具の在庫一覧</h2></header>
+    <div class="lab-table-scroll" role="region" aria-label="在庫の表" tabindex="0" data-practice-part="table">
+      <table class="lab-table" id="stock-table">
+        <caption class="sr-only">文具の在庫一覧</caption>
+        <thead><tr>
+          <th scope="col" data-practice-part="headings"><button class="text-button" type="button" data-sort-key="name">品目<span aria-hidden="true">↕</span></button></th>
+          <th scope="col">分類</th>
+          <th scope="col" data-practice-part="headings"><button class="text-button" type="button" data-sort-key="stock">在庫数<span aria-hidden="true">↕</span></button></th>
+        </tr></thead>
+        <tbody>
+          <tr><th scope="row">方眼ノート</th><td>紙もの</td><td>18</td></tr>
+          <tr><th scope="row">鉛筆</th><td>筆記具</td><td>42</td></tr>
+          <tr><th scope="row">便箋</th><td>紙もの</td><td>5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="practice-status lab-sort-status" role="status" id="stock-sort-status" data-practice-part="status">品目か在庫数の見出しで並び替えられます。</p>
+  </template>
+  <template id="practice-site">
+    <header class="practice-sample-heading"><h2 id="sample-title">まちの図書室</h2></header>
+    <nav class="lab-site-nav" aria-label="図書室のページ" data-practice-part="nav">
+      <a href="?demo=site&view=home" data-site-link="home">トップ</a>
+      <a href="?demo=site&view=hours" data-site-link="hours">利用案内</a>
+      <a href="?demo=site&view=access" data-site-link="access">アクセス</a>
+    </nav>
+    <div class="lab-site-content" data-practice-part="content">
+      <section data-site-view="home" aria-labelledby="site-welcome">
+        <img class="lab-site-image" src="./assets/landscape.svg" alt="緑の丘に朝日が昇るイラスト" width="640" height="320">
+        <h3 id="site-welcome">本をひらく、小さな場所</h3>
+        <p>絵本や短編、地域を歩くための本をそろえた、まちの小さな図書室です。</p>
+      </section>
+      <section data-site-view="hours" aria-labelledby="site-hours" hidden>
+        <h3 id="site-hours">開室時間と利用方法</h3>
+        <dl class="lab-site-hours">
+          <dt>火曜〜金曜</dt><dd><time datetime="10:00">10:00</time>〜<time datetime="18:00">18:00</time></dd>
+          <dt>土曜・日曜</dt><dd><time datetime="10:00">10:00</time>〜<time datetime="16:00">16:00</time></dd>
+          <dt>休室日</dt><dd>月曜・祝日</dd>
+        </dl>
+        <p>閲覧席は自由に利用できます。貸出は受付で利用カードをご提示ください。</p>
+      </section>
+      <section data-site-view="access" aria-labelledby="site-access" hidden>
+        <h3 id="site-access">図書室への行き方</h3>
+        <p>まちの広場から北へ徒歩3分。緑の看板が目印です。</p>
+        <dl class="lab-site-hours">
+          <dt>最寄り</dt><dd>「中央広場」停留所</dd>
+          <dt>入口</dt><dd>段差の少ない広場側入口</dd>
+        </dl>
+      </section>
+    </div>
+    <p class="lab-site-next" data-practice-part="next">
+      <a class="outline-button lab-route-link" href="?demo=site&view=hours" id="site-next">利用案内を見る</a>
+    </p>
+  </template>
+
+  <template id="practice-booking">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">読書会の予約</h2>
+      <p class="practice-status">架空の内容でお試しください。予約操作はこの画面内で完結します。</p>
+    </header>
+    <div class="lab-booking-steps" data-practice-part="steps">
+      <ol aria-label="予約の手順">
+        <li aria-current="step">1. 参加枠</li>
+        <li>2. 連絡先</li>
+        <li>3. 確認</li>
+      </ol>
+      <progress id="booking-progress" value="1" max="3" aria-label="予約手順の進み具合"></progress>
+    </div>
+    <form id="booking-form" autocomplete="off" novalidate>
+      <div class="lab-booking-fields" data-practice-part="fields">
+        <section data-booking-step="0">
+          <h3 tabindex="-1">参加枠を選ぶ</h3>
+          <fieldset class="lab-controls">
+            <legend>希望の時間（必須）</legend>
+            <label class="practice-check"><input type="radio" name="slot" value="土曜 10:00" required>土曜 10:00</label>
+            <label class="practice-check"><input type="radio" name="slot" value="日曜 14:00" required>日曜 14:00</label>
+          </fieldset>
+          <div class="practice-field lab-select">
+            <label for="booking-guests">参加人数</label>
+            <select id="booking-guests"><option value="1">1人</option><option value="2">2人</option><option value="3">3人</option></select>
+          </div>
+        </section>
+        <section data-booking-step="1" hidden>
+          <h3 tabindex="-1">連絡先を入力する</h3>
+          <fieldset class="lab-controls" disabled>
+            <legend>連絡先（どちらも必須）</legend>
+            <div class="practice-field">
+              <label for="booking-name">お名前</label>
+              <input id="booking-name" type="text" maxlength="40" required placeholder="例：山田 花子">
+            </div>
+            <div class="practice-field">
+              <label for="booking-email">メールアドレス</label>
+              <input id="booking-email" type="email" required placeholder="例：name@example.com">
+            </div>
+          </fieldset>
+        </section>
+        <section data-booking-step="2" hidden>
+          <h3 tabindex="-1">予約内容を確認する</h3>
+          <dl class="lab-booking-summary">
+            <dt>参加枠</dt><dd id="booking-review-slot"></dd>
+            <dt>参加人数</dt><dd id="booking-review-guests"></dd>
+            <dt>お名前</dt><dd id="booking-review-name"></dd>
+            <dt>メールアドレス</dt><dd id="booking-review-email"></dd>
+          </dl>
+        </section>
+      </div>
+      <div class="lab-actions" data-practice-part="buttons">
+        <button class="outline-button" id="booking-back" type="button" hidden>戻る</button>
+        <button class="primary-button" id="booking-next" type="submit">次へ</button>
+        <button class="outline-button" id="booking-restart" type="button" hidden>最初から試す</button>
+      </div>
+      <p class="practice-status lab-booking-status" id="booking-status" role="status"></p>
+    </form>
+  </template>
+
+  <template id="practice-dashboard">
+    <header class="practice-sample-heading"><h2 id="sample-title">ガイドサイトのアクセス状況</h2></header>
+    <div class="practice-field lab-select" data-practice-part="period">
+      <label for="dashboard-period">集計期間</label>
+      <select id="dashboard-period"><option value="week">過去7日間</option><option value="month">過去28日間</option></select>
+    </div>
+    <dl class="lab-dashboard-totals" data-practice-part="totals">
+      <div><dt>アクセス合計</dt><dd class="lab-number" id="dashboard-total"></dd></div>
+      <div><dt>最多の流入元</dt><dd id="dashboard-leading"></dd></div>
+    </dl>
+    <div class="lab-dashboard-breakdown" id="dashboard-breakdown" data-practice-part="breakdown"></div>
+    <p class="sr-only" id="dashboard-status" role="status"></p>
+  </template>
+
+  <template id="practice-theme">
+    <header class="practice-sample-heading"><h2 id="sample-title">記事の表示設定</h2></header>
+    <div class="lab-theme-controls">
+      <fieldset class="lab-controls" id="theme-scheme" data-practice-part="settings">
+        <legend>配色</legend>
+        <div class="lab-theme-schemes">
+          <label class="practice-check"><input type="radio" name="preview-scheme" value="light" checked>ライト</label>
+          <label class="practice-check"><input type="radio" name="preview-scheme" value="dark">ダーク</label>
+        </div>
+      </fieldset>
+      <div class="practice-field lab-select" data-practice-part="settings">
+        <label for="theme-accent">アクセント色</label>
+        <select id="theme-accent">
+          <option value="blue">青</option><option value="green">深緑</option><option value="plum">すみれ</option>
+        </select>
+      </div>
+    </div>
+    <div class="lab-slider-row lab-theme-scale" data-practice-part="scale">
+      <label for="theme-scale">文字サイズ</label>
+      <input id="theme-scale" type="range" min="90" max="130" step="5" value="100">
+      <output for="theme-scale" aria-live="off">100%</output>
+    </div>
+    <article class="lab-themed-article" id="themed-article" data-scheme="light" data-accent="blue" data-practice-part="preview" aria-labelledby="themed-article-title">
+      <img src="./assets/landscape.svg" alt="緑の丘と空のイラスト" width="640" height="320">
+      <div>
+        <p class="lab-article-topic">まち歩き</p>
+        <h3 id="themed-article-title">朝の散歩をノートに残す</h3>
+        <p>見慣れた道でも、歩く時間を変えると違う風景が見えてきます。目に留まった色を一つだけ書き留めてみましょう。</p>
+      </div>
+    </article>
   </template>
 </body>
 </html>
