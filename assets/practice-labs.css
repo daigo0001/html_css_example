@@ -342,3 +342,47 @@
 @media (prefers-reduced-motion: reduce) {
   .lab-spinner { animation: none; }
 }
+
+.attachment-help { margin-top: .375rem; }
+.attachment-zone {
+  display: grid;
+  justify-items: center;
+  gap: .625rem;
+  padding: 1.25rem;
+  border: 1px dashed var(--accent);
+  border-radius: .875rem;
+  background: var(--inset);
+  text-align: center;
+}
+.attachment-zone.is-dragging { border-style: solid; background: var(--accent-tint); }
+.attachment-zone p { font-size: .9375rem; font-weight: 650; }
+.attachment-zone label { cursor: pointer; }
+.attachment-zone input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 3px; }
+.attachment-zone input:disabled + label { opacity: .5; cursor: default; }
+.attachment-feedback, .attachment-selection { margin-block: 1rem; padding: .25rem; }
+.attachment-errors {
+  margin: .5rem 0 0;
+  padding: .375rem .625rem .375rem 1.625rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: var(--inset);
+  color: var(--danger);
+  font-size: .8125rem;
+  overflow-wrap: anywhere;
+}
+.attachment-errors li { padding-block: .25rem; }
+.attachment-selection h3 { margin-bottom: .375rem; font-size: .9375rem; }
+.attachment-list { display: grid; gap: .375rem; margin: 0; padding: 0; list-style: none; }
+.attachment-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .625rem;
+  padding: .5rem .625rem;
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  font-size: .875rem;
+}
+.attachment-list li > div { min-width: 0; overflow-wrap: anywhere; }
+.attachment-list li span { display: block; color: var(--secondary); font-size: .75rem; }
+.attachment-list li button { flex: none; }

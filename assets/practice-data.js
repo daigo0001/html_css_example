@@ -2,6 +2,43 @@ import { contactParts } from './contact-parts.js';
 import { labExamples } from './practice-lab-data.js';
 
 export const practiceExamples = [
+  {
+    id: 'attachment',
+    group: 'parts',
+    title: 'ファイルの添付と確認',
+    description: 'ファイルを選ぶかドロップして、形式・サイズの検証、削除と確認を試します。',
+    icon: 'file',
+    parts: {
+      picker: {
+        label: 'ファイル選択とドロップ領域',
+        tags: ['input[type=file]', 'accept', 'multiple', 'DataTransfer.files'],
+        description: 'input からファイル選択画面を開けます。ドロップ時は DataTransfer.files から受け取り、選択時と同じ検証に渡します。',
+        code: '<label for="attachment-files">ファイルを選ぶ</label>\n<input id="attachment-files" type="file" multiple\n  accept="image/png,image/jpeg,application/pdf">',
+        card: 'html-attr-accept',
+      },
+      validation: {
+        label: '形式・サイズの結果',
+        tags: ['File.type', 'File.size', 'role="status"'],
+        description: '取得した形式とサイズ、ファイル名の拡張子を確かめます。追加結果は読み上げにも伝え、どのファイルでどんなエラーが起きたかを一覧で示します。',
+        code: 'if (file.size > 5_000_000) {\n  showError(file.name, "1ファイルは5 MBまでです。");\n}',
+        card: 'html-attr-aria-live',
+      },
+      list: {
+        label: '添付済み一覧と削除',
+        tags: ['ul', 'button', 'aria-label'],
+        description: 'ファイル名とサイズを表示し、各ボタンの名前に対象のファイル名を含めます。削除したら次の削除ボタンかファイル選択へフォーカスを移します。',
+        code: '<button type="button" aria-label="申込書.pdfを削除">削除</button>',
+        card: 'html-attr-aria-label',
+      },
+      review: {
+        label: '確認の進捗',
+        tags: ['progress', 'aria-busy', 'value'],
+        description: '選んだ件数を progress の max にし、処理した件数を value に反映します。ファイルの送信を模した確認は画面内で完結します。',
+        code: '<label for="attachment-progress">確認の進み具合</label>\n<progress id="attachment-progress" value="1" max="3"></progress>',
+        card: 'html-progress',
+      },
+    },
+  },
   ...labExamples,
   {
     id: 'contact',

@@ -3,12 +3,12 @@ import { test, expect } from '@playwright/test';
 test('実践デモを種類とパーツ名で絞り込み、画面から一覧に戻ると条件を復元する', async ({ page }) => {
   await page.goto('./practice.html');
   const search = page.getByRole('searchbox', { name: '実践デモを検索' });
-  await expect(page.locator('#practice-count')).toHaveText('19件のデモ');
+  await expect(page.locator('#practice-count')).toHaveText('20件のデモ');
   await page.getByRole('button', { name: 'Webページ', exact: true }).click();
   await expect(page.locator('#practice-count')).toHaveText('8件のデモ');
   await expect(page.locator('#practice-parts-category')).toBeHidden();
   await page.getByRole('button', { name: 'Webパーツ', exact: true }).click();
-  await expect(page.locator('#practice-count')).toHaveText('11件のデモ');
+  await expect(page.locator('#practice-count')).toHaveText('12件のデモ');
   await search.fill('カウントダウン');
   await expect(page.locator('#practice-count')).toHaveText('1件のデモ');
   await page.getByRole('link', { name: /カウントダウンタイマー/ }).click();

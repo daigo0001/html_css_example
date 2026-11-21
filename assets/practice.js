@@ -4,6 +4,8 @@ import { mountPartsList, partTag } from './practice-parts.js';
 import { setupComponents } from './practice-components.js';
 import { setupPages } from './practice-pages.js';
 import { collectionHref, collectionParams } from './practice-navigation.js';
+import { mountAccessibilityCheck } from './practice-accessibility.js';
+import { setupAttachment } from './practice-attachment.js';
 
 const $ = selector => document.querySelector(selector);
 const params = new URLSearchParams(location.search);
@@ -222,6 +224,7 @@ const setupExample = {
   faq: setupFaq,
   layout: setupLayout,
   progress: setupProgress,
+  attachment: setupAttachment,
   ...setupComponents,
   ...setupPages,
 };
@@ -237,6 +240,7 @@ function renderExample(item) {
   $('#practice-collection').hidden = true;
   $('#practice-example').hidden = false;
   setupExample[item.id](stage, params);
+  mountAccessibilityCheck(stage, $('#practice-a11y-toggle'), $('#practice-side'));
 
   const targets = [...stage.querySelectorAll('[data-practice-part]')];
   const title = $('#practice-part-title');

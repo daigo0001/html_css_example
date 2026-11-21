@@ -168,7 +168,7 @@
 .demo-result[data-result="error"] { color: var(--danger); }
 .demo-result[data-result="success"] { color: var(--success); }
 
-.demo-inspector-position { position: sticky; top: 5rem; }
+.demo-inspector-position { display: grid; gap: 1.25rem; min-width: 0; position: sticky; top: 5rem; }
 .demo-inspector { padding: 1.25rem; }
 .demo-inspector-heading {
   display: flex;
@@ -242,4 +242,4 @@
   color: var(--secondary);
   font: .75rem/1.5 -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
 }
-.demo-inspector-position:empty { display: none; }
+.demo-inspector-position:not(:has(> :not([hidden]))) { display: none; }

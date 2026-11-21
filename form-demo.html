@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./assets/themes.css">
   <link rel="stylesheet" href="./assets/form-demo.css">
   <link rel="stylesheet" href="./assets/practice.css">
+  <link rel="stylesheet" href="./assets/practice-accessibility.css">
   <script type="module" src="./assets/form-demo.js"></script>
 </head>
 <body class="demo-page">
@@ -32,6 +33,7 @@
         <button type="button" data-demo-mode="parts" aria-pressed="true"><span data-icon="cursor"></span>パーツ解説</button>
         <button type="button" data-demo-mode="validation" aria-pressed="false"><span data-icon="shield"></span>入力検証</button>
       </div>
+      <button class="outline-button a11y-toggle" id="contact-a11y-toggle" type="button" hidden><span data-icon="shield"></span>アクセシビリティ確認</button>
       <fieldset class="demo-method" id="demo-method" hidden>
         <legend class="sr-only">エラーの表示方法</legend>
         <label><input type="radio" name="demo-method" value="native" checked>標準メッセージ</label>

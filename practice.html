@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./assets/styles.css">
   <link rel="stylesheet" href="./assets/themes.css">
   <link rel="stylesheet" href="./assets/practice.css">
+  <link rel="stylesheet" href="./assets/practice-accessibility.css">
   <link rel="stylesheet" href="./assets/practice-labs.css">
   <script type="module" src="./assets/practice.js"></script>
 </head>
@@ -64,20 +65,25 @@
           <h1 id="example-title"></h1>
           <p id="example-description"></p>
         </div>
-        <a class="outline-button practice-jump" href="#practice-inspector">パーツ一覧へ <span data-icon="arrow-down"></span></a>
+        <div class="practice-heading-actions">
+          <a class="outline-button practice-jump" href="#practice-inspector">パーツ一覧へ <span data-icon="arrow-down"></span></a>
+          <button class="outline-button a11y-toggle" id="practice-a11y-toggle" type="button" hidden><span data-icon="shield"></span>アクセシビリティ確認</button>
+        </div>
       </header>
       <div class="practice-workbench">
         <section class="practice-sample" id="practice-stage" aria-labelledby="sample-title"></section>
-        <aside class="practice-inventory" id="practice-inspector" aria-labelledby="inventory-title" tabindex="-1">
-          <h2 id="inventory-title">この画面のパーツ一覧</h2>
-          <ul class="practice-parts-list" id="practice-parts"></ul>
-          <div class="practice-part-details">
-            <h3 id="practice-part-title" aria-live="polite"></h3>
-            <p id="practice-part-description"></p>
-            <pre><code id="practice-part-code"></code></pre>
-            <a class="practice-reference" id="practice-part-reference" href="./">図鑑カードで詳しく見る <span data-icon="arrow-up-right"></span></a>
-          </div>
-        </aside>
+        <div class="practice-side" id="practice-side">
+          <aside class="practice-inventory" id="practice-inspector" aria-labelledby="inventory-title" tabindex="-1">
+            <h2 id="inventory-title">この画面のパーツ一覧</h2>
+            <ul class="practice-parts-list" id="practice-parts"></ul>
+            <div class="practice-part-details">
+              <h3 id="practice-part-title" aria-live="polite"></h3>
+              <p id="practice-part-description"></p>
+              <pre><code id="practice-part-code"></code></pre>
+              <a class="practice-reference" id="practice-part-reference" href="./">図鑑カードで詳しく見る <span data-icon="arrow-up-right"></span></a>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   </main>
@@ -589,6 +595,32 @@
         <p>見慣れた道でも、歩く時間を変えると違う風景が見えてきます。目に留まった色を一つだけ書き留めてみましょう。</p>
       </div>
     </article>
+  </template>
+  <template id="practice-attachment">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">資料を添付する</h2>
+      <p id="attachment-help" class="practice-status attachment-help">PNG・JPEG・PDFを3件まで。1ファイル5 MBまで。確認はこの画面内で完結します。</p>
+    </header>
+    <div class="attachment-zone" id="attachment-zone" data-practice-part="picker">
+      <span class="practice-card-icon" data-icon="file"></span>
+      <p>ここにファイルをドロップ</p>
+      <input class="sr-only" id="attachment-files" type="file" accept="image/png,image/jpeg,application/pdf,.png,.jpg,.jpeg,.pdf" multiple aria-describedby="attachment-help">
+      <label class="outline-button" for="attachment-files">ファイルを選ぶ</label>
+    </div>
+    <div class="attachment-feedback" data-practice-part="validation">
+      <p class="practice-status" id="attachment-status" role="status">ファイルを選ぶと添付一覧に表示されます。</p>
+      <ul id="attachment-errors" class="attachment-errors" aria-label="添付のエラー" hidden></ul>
+    </div>
+    <div class="attachment-selection" data-practice-part="list">
+      <h3>添付したファイル</h3>
+      <p class="practice-status" id="attachment-empty">添付は0件です。</p>
+      <ul class="attachment-list" id="attachment-list" aria-label="添付したファイル"></ul>
+    </div>
+    <div class="lab-progress-box attachment-review" id="attachment-review" data-practice-part="review" aria-busy="false">
+      <label for="attachment-progress">確認の進み具合</label>
+      <progress id="attachment-progress" value="0" max="1"></progress>
+      <div class="lab-actions"><button class="primary-button" id="attachment-confirm" type="button" disabled>添付を確認する</button></div>
+    </div>
   </template>
 </body>
 </html>

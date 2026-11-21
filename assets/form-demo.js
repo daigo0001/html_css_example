@@ -2,6 +2,7 @@ import { hydrateIcons } from './icons.js';
 import { contactParts as parts } from './contact-parts.js';
 import { mountPartsList } from './practice-parts.js';
 import { collectionHref } from './practice-navigation.js';
+import { mountAccessibilityCheck } from './practice-accessibility.js';
 
 hydrateIcons();
 document.querySelector('.demo-back').href = collectionHref(new URLSearchParams(location.search));
@@ -201,3 +202,4 @@ form.addEventListener('submit', event => {
 
 setMode(mode);
 submitButton.disabled = false;
+mountAccessibilityCheck(form, document.querySelector('#contact-a11y-toggle'), inspectorPosition);
