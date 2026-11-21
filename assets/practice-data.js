@@ -1,0 +1,157 @@
+import { contactParts } from './contact-parts.js';
+
+export const practiceExamples = [
+  {
+    id: 'contact',
+    title: '問い合わせフォーム',
+    description: '必須入力と形式チェックを試し、ブラウザー標準の表示と欄ごとのエラー表示を比べます。',
+    icon: 'mail',
+    href: './form-demo.html',
+    parts: contactParts,
+  },
+  {
+    id: 'search',
+    title: '商品一覧の検索・絞り込み',
+    description: '商品名やカテゴリーで絞り込み、0件のときの表示やURLから条件を復元する動きを試します。',
+    icon: 'search',
+    parts: {
+      query: {
+        label: '検索欄',
+        tags: ['search', 'input[type=search]'],
+        description: 'search 要素は検索操作のまとまりを表します。検索語の入力に合わせて結果を更新し、現在の条件を URL のクエリーに反映します。',
+        code: '<search>\n  <label for="product-query">商品名</label>\n  <input id="product-query" type="search">\n</search>',
+        card: 'html-search',
+      },
+      category: {
+        label: 'カテゴリー選択',
+        tags: ['select', 'option'],
+        description: 'option の表示名と value を分けておくと、ラベルを変更しても絞り込み条件をURLへ引き継げます。',
+        code: '<select id="product-category">\n  <option value="all">すべて</option>\n  <option value="paper">紙もの</option>\n</select>',
+        card: 'html-option',
+      },
+      results: {
+        label: '件数と商品リスト',
+        tags: ['role="status"', 'ul', 'hidden'],
+        description: '条件に合わない項目は hidden で一覧から外します。結果件数を role="status" の領域で更新すると、フォーカスを保ったまま件数を通知できます。',
+        code: '<p role="status">2件の商品</p>\n<ul>\n  <li>方眼ノート</li>\n  <li hidden>鉛筆</li>\n</ul>',
+        card: 'html-attr-hidden',
+      },
+    },
+  },
+  {
+    id: 'dialog',
+    title: '削除前の確認ダイアログ',
+    description: '削除の前に確認を挟みます。取消・Esc・削除後と、閉じたあとのフォーカスを比べます。',
+    icon: 'shield',
+    parts: {
+      open: {
+        label: '確認を開くボタン',
+        tags: ['button', 'showModal()'],
+        description: 'ボタンから showModal() を呼ぶと、操作対象が確認画面に移ります。背景の操作はブラウザーが止めます。',
+        code: 'const dialog = document.querySelector("dialog");\nbutton.addEventListener("click", () => {\n  dialog.showModal();\n});',
+        card: 'html-dialog',
+      },
+      panel: {
+        label: '確認ダイアログ',
+        tags: ['dialog', 'aria-labelledby'],
+        description: '確認の見出しを aria-labelledby、補足を aria-describedby で dialog に結び付けます。Esc でも閉じられます。',
+        code: '<dialog aria-labelledby="confirm-title"\n  aria-describedby="confirm-description">\n  <h2 id="confirm-title">下書きを削除しますか？</h2>\n</dialog>',
+        card: 'html-attr-aria-labelledby',
+      },
+      actions: {
+        label: '取消と削除',
+        tags: ['form[method=dialog]', 'autofocus'],
+        description: 'method="dialog" で、押したボタンの値を returnValue に入れて閉じます。取消へ最初にフォーカスし、削除後は次に操作できる復元ボタンへ移します。',
+        code: '<form method="dialog">\n  <button value="cancel" autofocus>取り消す</button>\n  <button value="delete">削除する</button>\n</form>',
+        card: 'html-dialog',
+      },
+    },
+  },
+  {
+    id: 'faq',
+    title: 'よくある質問',
+    description: '質問を開閉し、回答を一つずつ開く設定と、複数を開いたまま読む設定を比べます。',
+    icon: 'help',
+    parts: {
+      disclosure: {
+        label: '質問と回答のまとまり',
+        tags: ['details', 'open'],
+        description: 'details は必要なときに内容を展開できる要素です。open 属性がある項目は最初から開きます。',
+        code: '<details open>\n  <summary>配送に何日かかりますか？</summary>\n  <p>通常は2〜4営業日です。</p>\n</details>',
+        card: 'html-details',
+      },
+      summary: {
+        label: '質問の見出し',
+        tags: ['summary'],
+        description: 'summary を details の先頭に置きます。クリックに加えて、キーボードの Enter や Space でも回答を開閉できます。',
+        code: '<summary>配送に何日かかりますか？</summary>',
+        card: 'html-details',
+      },
+      group: {
+        label: '一つずつ開く設定',
+        tags: ['details[name]', 'input[type=checkbox]'],
+        description: '複数の details に同じ name を指定すると、一つだけ開くグループになります。設定を切り替えると回答を並べて読めます。',
+        code: '<details name="questions">…</details>\n<details name="questions">…</details>',
+        card: 'html-attr-details-name',
+      },
+    },
+  },
+  {
+    id: 'layout',
+    title: 'レスポンシブな記事一覧',
+    description: 'プレビューの幅を変え、同じ記事カードが1列・2列・3列に並び替わる様子を見ます。',
+    icon: 'grid',
+    parts: {
+      widths: {
+        label: '幅の切り替え',
+        tags: ['button', 'aria-pressed'],
+        description: '選んだ幅を aria-pressed で示します。プレビュー部分だけを広げるので、同じ端末で複数の幅を試せます。',
+        code: '<button type="button" aria-pressed="true">260px</button>',
+        card: 'html-button',
+      },
+      grid: {
+        label: '列が変わるグリッド',
+        tags: ['display: grid', 'minmax()', 'auto-fit'],
+        description: 'auto-fit と minmax() で、コンテナーに入る列数を決めます。ここでは1列を最低176px確保し、入るだけ横に並べます。',
+        code: '.articles {\n  display: grid;\n  grid-template-columns:\n    repeat(auto-fit, minmax(min(100%, 11rem), 1fr));\n}',
+        card: 'css-minmax',
+      },
+      article: {
+        label: '記事カード',
+        tags: ['article', 'h3'],
+        description: '単独で読める記事の要約を article で囲います。グリッドの幅が変わっても記事の読み順は保たれます。',
+        code: '<article>\n  <h3>余白を揃える</h3>\n  <p>カード一覧の見出しを整える工夫。</p>\n</article>',
+        card: 'html-article',
+      },
+    },
+  },
+  {
+    id: 'progress',
+    title: '公開前の進捗チェックリスト',
+    description: '公開前の確認項目をチェックし、完了件数と進捗バーが連動する様子を試します。',
+    icon: 'file',
+    parts: {
+      group: {
+        label: 'チェック項目のまとまり',
+        tags: ['fieldset', 'legend'],
+        description: 'fieldset で同じ目的を持つ確認項目をまとめます。legend は、そのまとまりに意味のある名前を付けます。',
+        code: '<fieldset>\n  <legend>公開前の確認</legend>\n  <!-- 確認項目 -->\n</fieldset>',
+        card: 'html-fieldset',
+      },
+      checks: {
+        label: 'チェックボックス',
+        tags: ['input[type=checkbox]', 'label', 'checked'],
+        description: 'label 全体を押してチェックできます。JavaScript では checked プロパティから現在の状態を読み取ります。',
+        code: '<label><input type="checkbox"> リンクを確認した</label>\n\nconst done = tasks.filter(task => task.checked);',
+        card: 'html-attr-checked',
+      },
+      progress: {
+        label: '進捗バーと完了件数',
+        tags: ['progress', 'value', 'max', 'role="status"'],
+        description: 'progress の value に完了数、max に総数を入れます。数字も一緒に表示すると、色を頼りにせず進み具合が分かります。',
+        code: '<progress value="2" max="3" aria-label="公開準備の進捗"></progress>\n<p role="status">3件中2件が完了</p>',
+        card: 'html-progress',
+      },
+    },
+  },
+];

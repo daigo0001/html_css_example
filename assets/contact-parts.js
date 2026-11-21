@@ -1,0 +1,36 @@
+export const contactParts = {
+  name: {
+    label: 'お名前',
+    tags: ['label', 'input', 'required'],
+    description: 'label の for を入力欄の id とそろえると、ラベルを押して入力欄に移動できます。name はフォームデータに入る項目名です。',
+    code: '<label for="contact-name">お名前</label>\n<input id="contact-name" name="name"\n  type="text" required maxlength="40">',
+    card: 'html-label',
+    flags: ['valueMissing', 'tooLong'],
+    missing: 'お名前を入力してください。',
+  },
+  email: {
+    label: 'メールアドレス',
+    tags: ['input[type=email]', 'ValidityState'],
+    description: 'required で入力を必須にします。type="email" は形式の検証と、対応端末のメール用キーボードに使われます。',
+    code: '<input id="contact-email" name="email"\n  type="email" required>',
+    card: 'html-attr-email-validation',
+    flags: ['valueMissing', 'typeMismatch'],
+    missing: 'メールアドレスを入力してください。',
+  },
+  message: {
+    label: 'お問い合わせ内容',
+    tags: ['textarea', 'minlength', 'aria-describedby'],
+    description: 'textarea は複数行を受け取れます。minlength と maxlength で長さを制約し、aria-describedby で入力条件の説明を結び付けます。',
+    code: '<textarea id="contact-message" name="message"\n  required minlength="10" maxlength="300"\n  aria-describedby="contact-message-hint"></textarea>',
+    card: 'html-attr-minlength-maxlength',
+    flags: ['valueMissing', 'tooShort', 'tooLong'],
+    missing: 'お問い合わせ内容を入力してください。',
+  },
+  submit: {
+    label: '送信ボタン',
+    tags: ['form', 'button[type=submit]'],
+    description: 'type="submit" のボタンを押すと、標準の入力検証が働きます。「入力検証」に切り替えると、このボタンで送信の流れを試せます。',
+    code: '<button type="submit">送信を試す</button>',
+    card: 'html-form',
+  },
+};

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="問い合わせフォームのパーツと、ブラウザー標準の入力検証を操作しながら学ぶ実践デモ。">
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+  <title>問い合わせフォームの実践デモ — Web Notes</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <script src="./assets/theme.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/themes.css">
+  <link rel="stylesheet" href="./assets/form-demo.css">
+  <link rel="stylesheet" href="./assets/practice.css">
+  <script type="module" src="./assets/form-demo.js"></script>
+</head>
+<body class="demo-page">
+  <a href="#demo-main" class="skip-link">実践デモへスキップ</a>
+  <header class="topbar">
+    <a class="quiet-button demo-back" href="./practice.html"><span data-icon="arrow-left"></span>実践デモ一覧へ</a>
+    <span class="topbar-title">Web Notes</span>
+  </header>
+  <main id="demo-main">
+    <header class="section-heading">
+      <h1>問い合わせフォームを試す</h1>
+      <p>パーツを選んで仕組みを読み、入力を変えてブラウザーの判定を確かめましょう。</p>
+    </header>
+
+    <div class="demo-toolbar">
+      <div class="demo-segments" role="group" aria-label="デモのモード">
+        <button type="button" data-demo-mode="parts" aria-pressed="true"><span data-icon="cursor"></span>パーツ解説</button>
+        <button type="button" data-demo-mode="validation" aria-pressed="false"><span data-icon="shield"></span>入力検証</button>
+      </div>
+      <fieldset class="demo-method" id="demo-method" hidden>
+        <legend class="sr-only">エラーの表示方法</legend>
+        <label><input type="radio" name="demo-method" value="native" checked>標準メッセージ</label>
+        <label><input type="radio" name="demo-method" value="inline">入力欄の下に表示</label>
+      </fieldset>
+    </div>
+
+    <details class="practice-inventory practice-contact-inventory">
+      <summary>この画面のパーツ一覧</summary>
+      <ul id="contact-parts" class="practice-parts-list"></ul>
+    </details>
+    <div class="demo-layout">
+      <section class="demo-form-card" aria-labelledby="contact-title">
+        <header class="demo-form-heading">
+          <span class="demo-form-icon" data-icon="mail"></span>
+          <h2 id="contact-title">お問い合わせ</h2>
+          <p>架空の内容でお試しください。送信操作はこの画面内で完結します。</p>
+        </header>
+        <form id="contact-demo" autocomplete="off" novalidate>
+          <div class="demo-part" data-demo-part="name">
+            <div class="demo-field-heading">
+              <label for="contact-name">お名前 <span>必須</span></label>
+              <button class="icon-button demo-info" type="button" data-inspect aria-label="お名前の解説を表示" aria-pressed="false" aria-controls="demo-inspector"><span data-icon="info"></span></button>
+            </div>
+            <input type="text" id="contact-name" name="name" required maxlength="40" placeholder="例：山田 花子">
+            <p class="demo-error" id="contact-name-error" hidden></p>
+          </div>
+          <div class="demo-part" data-demo-part="email">
+            <div class="demo-field-heading">
+              <label for="contact-email">メールアドレス <span>必須</span></label>
+              <button class="icon-button demo-info" type="button" data-inspect aria-label="メールアドレスの解説を表示" aria-pressed="true" aria-controls="demo-inspector"><span data-icon="info"></span></button>
+            </div>
+            <input type="email" id="contact-email" name="email" required placeholder="例：name@example.com">
+            <p class="demo-error" id="contact-email-error" hidden></p>
+          </div>
+          <div class="demo-part" data-demo-part="message">
+            <div class="demo-field-heading">
+              <label for="contact-message">お問い合わせ内容 <span>必須</span></label>
+              <button class="icon-button demo-info" type="button" data-inspect aria-label="お問い合わせ内容の解説を表示" aria-pressed="false" aria-controls="demo-inspector"><span data-icon="info"></span></button>
+            </div>
+            <textarea id="contact-message" name="message" rows="3" required minlength="10" maxlength="300" aria-describedby="contact-message-hint" placeholder="例：資料の公開時期について教えてください。"></textarea>
+            <p class="demo-hint" id="contact-message-hint">10〜300文字</p>
+            <p class="demo-error" id="contact-message-error" hidden></p>
+          </div>
+          <div class="demo-actions demo-part" data-demo-part="submit">
+            <button class="primary-button" type="button" id="contact-submit" disabled>送信を試す<span data-icon="arrow-right"></span></button>
+            <button class="text-button" type="reset">入力をリセット</button>
+          </div>
+          <p id="demo-result" class="demo-result" role="status"></p>
+        </form>
+        <noscript><p class="demo-hint">パーツの解説と入力検証を試すには JavaScript を有効にしてください。</p></noscript>
+      </section>
+
+      <div class="demo-inspector-position">
+        <aside class="demo-inspector" id="demo-inspector" aria-labelledby="demo-part-title">
+          <div class="demo-inspector-heading">
+            <span class="demo-inspector-icon" data-icon="code"></span>
+            <div>
+              <p id="demo-panel-label">パーツ解説</p>
+              <h2 id="demo-part-title">メールアドレス</h2>
+            </div>
+          </div>
+          <div id="demo-part-panel">
+            <p id="demo-part-description">メールアドレス用の入力欄です。必須の設定と形式チェックを組み合わせています。</p>
+            <pre><code id="demo-part-code">&lt;input type="email" required&gt;</code></pre>
+          </div>
+          <div id="demo-validation-panel" hidden>
+            <p id="demo-validation-outcome"></p>
+            <dl id="demo-flags" class="demo-flags"></dl>
+            <div class="demo-message">
+              <code>validationMessage</code>
+              <p id="demo-validation-message"></p>
+            </div>
+          </div>
+          <a id="demo-related-card" class="demo-reference" href="./?item=html-attr-email-validation">図鑑カードで詳しく見る<span data-icon="arrow-up-right"></span></a>
+        </aside>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

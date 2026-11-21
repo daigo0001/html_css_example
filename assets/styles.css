@@ -172,6 +172,7 @@ a { color: var(--accent); text-underline-offset: .2em; }
 }
 .topbar-title { color: var(--secondary); font-size: .875rem; font-weight: 620; }
 .topbar-title .icon { color: var(--accent); }
+.topbar-actions .demo-link { color: var(--accent); white-space: nowrap; text-decoration: none; }
 .quiet-button, .outline-button, .icon-button, .text-button,
 .primary-button, .try-button, .save-card, .details-button {
   display: inline-flex;
@@ -665,6 +666,7 @@ dialog::backdrop { background: rgb(13 17 25 / 50%); }
 @media (max-width: 500px) {
   .topbar-actions { gap: .125rem; }
   .topbar-actions button { min-width: var(--target); }
+  .topbar-actions .demo-link { padding-inline: .375rem; }
   .topbar-actions button span, #shuffle-button span, #share-card span { display: none; }
   #shuffle-button, #share-card { min-width: var(--target); padding-inline: .5rem; }
   .search-row { gap: .5rem; }

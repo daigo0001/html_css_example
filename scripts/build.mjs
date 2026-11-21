@@ -7,7 +7,7 @@ const output = join(root, '_site');
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const path of ['index.html', '404.html', 'robots.txt', 'sitemap.xml', 'assets']) {
+for (const path of ['index.html', 'practice.html', 'form-demo.html', '404.html', 'robots.txt', 'sitemap.xml', 'assets']) {
   await cp(join(root, path), join(output, path), { recursive: true });
 }
 const index = await readFile(join(output, 'index.html'), 'utf8');

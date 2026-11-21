@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="実際の画面を操作し、フォーム・検索・ダイアログなどに使われているHTMLとCSSのパーツを確かめる実践デモ。">
+  <title>実践デモ — Web Notes</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <script src="./assets/theme.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/themes.css">
+  <link rel="stylesheet" href="./assets/practice.css">
+  <script type="module" src="./assets/practice.js"></script>
+</head>
+<body class="practice-page">
+  <a href="#practice-main" class="skip-link">実践デモへスキップ</a>
+  <header class="topbar">
+    <a class="quiet-button practice-back" id="practice-back" href="./">
+      <span data-icon="arrow-left"></span><span id="practice-back-label">カード図鑑に戻る</span>
+    </a>
+    <span class="topbar-title">Web Notes</span>
+  </header>
+
+  <main id="practice-main">
+    <section id="practice-collection" aria-labelledby="practice-title">
+      <header class="section-heading">
+        <h1 id="practice-title">実践デモ</h1>
+        <p>実際の画面を操作して、どのHTMLやCSSが使われているか確かめましょう。</p>
+      </header>
+      <ul class="practice-cards" id="practice-cards"></ul>
+      <noscript>
+        <p>デモの一覧を表示するには JavaScript を有効にしてください。</p>
+        <a href="./form-demo.html">問い合わせフォームを開く</a>
+      </noscript>
+    </section>
+
+    <section id="practice-example" aria-labelledby="example-title" hidden>
+      <header class="section-heading practice-heading">
+        <div>
+          <h1 id="example-title"></h1>
+          <p id="example-description"></p>
+        </div>
+        <a class="outline-button practice-jump" href="#practice-inspector">パーツ一覧へ <span data-icon="arrow-down"></span></a>
+      </header>
+      <div class="practice-workbench">
+        <section class="practice-sample" id="practice-stage" aria-labelledby="sample-title"></section>
+        <aside class="practice-inventory" id="practice-inspector" aria-labelledby="inventory-title" tabindex="-1">
+          <h2 id="inventory-title">この画面のパーツ一覧</h2>
+          <ul class="practice-parts-list" id="practice-parts"></ul>
+          <div class="practice-part-details">
+            <h3 id="practice-part-title" aria-live="polite"></h3>
+            <p id="practice-part-description"></p>
+            <pre><code id="practice-part-code"></code></pre>
+            <a class="practice-reference" id="practice-part-reference" href="./">図鑑カードで詳しく見る <span data-icon="arrow-up-right"></span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <template id="practice-search">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">文具店の商品一覧</h2>
+    </header>
+    <search class="practice-filters">
+      <div class="practice-field" data-practice-part="query">
+        <label for="product-query">商品名</label>
+        <input type="search" id="product-query" placeholder="例：ノート">
+      </div>
+      <div class="practice-field" data-practice-part="category">
+        <label for="product-category">カテゴリー</label>
+        <select id="product-category">
+          <option value="all">すべて</option>
+          <option value="paper">紙もの</option>
+          <option value="pens">筆記具</option>
+        </select>
+      </div>
+    </search>
+    <div class="practice-results" data-practice-part="results">
+      <div class="practice-result-bar">
+        <p id="product-count" class="practice-status" role="status"></p>
+        <button type="button" class="text-button" id="clear-products" hidden>絞り込みを解除</button>
+      </div>
+      <ul class="practice-product-list" id="product-list">
+        <li data-product="paper"><strong>方眼ノート</strong><span>紙もの</span><span>¥580</span></li>
+        <li data-product="pens"><strong>木軸の鉛筆</strong><span>筆記具</span><span>¥240</span></li>
+        <li data-product="paper"><strong>無地ノート</strong><span>紙もの</span><span>¥460</span></li>
+        <li data-product="pens"><strong>水性ペン</strong><span>筆記具</span><span>¥380</span></li>
+      </ul>
+      <p class="practice-empty" id="product-empty" hidden>別の商品名やカテゴリーで検索してください。</p>
+    </div>
+  </template>
+
+  <template id="practice-dialog">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">記事の下書き</h2>
+    </header>
+    <article class="practice-draft" id="article-draft" data-practice-part="open">
+      <div>
+        <h3>週末の読みもの</h3>
+        <p>下書き</p>
+      </div>
+      <button class="outline-button" type="button" id="open-confirmation">削除…</button>
+    </article>
+    <p class="practice-status" id="draft-status" role="status"></p>
+    <button class="outline-button" type="button" id="restore-draft" hidden>下書きを復元</button>
+    <dialog class="practice-confirmation" id="confirm-delete" aria-labelledby="confirm-title" aria-describedby="confirm-description" data-practice-part="panel">
+      <h2 id="confirm-title">下書きを削除しますか？</h2>
+      <p id="confirm-description">「週末の読みもの」が下書き一覧から外れます。</p>
+      <form method="dialog" data-practice-part="actions">
+        <button class="outline-button" type="submit" value="cancel" autofocus>取り消す</button>
+        <button class="primary-button practice-danger" type="submit" value="delete">削除する</button>
+      </form>
+    </dialog>
+  </template>
+
+  <template id="practice-faq">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">ご注文について</h2>
+    </header>
+    <label class="practice-check practice-faq-setting" data-practice-part="group">
+      <input type="checkbox" id="faq-exclusive" checked>
+      回答を一つずつ開く
+    </label>
+    <div class="practice-faq-list">
+      <details name="questions" data-practice-part="disclosure" open>
+        <summary data-practice-part="summary">配送に何日かかりますか？</summary>
+        <p>通常はご注文から2〜4営業日でお届けします。</p>
+      </details>
+      <details name="questions" data-practice-part="disclosure">
+        <summary data-practice-part="summary">支払い方法を選べますか？</summary>
+        <p>クレジットカードと銀行振込から選べます。</p>
+      </details>
+      <details name="questions" data-practice-part="disclosure">
+        <summary data-practice-part="summary">返品の手続きはどうしますか？</summary>
+        <p>商品到着後7日以内に、注文番号を添えてお問い合わせください。</p>
+      </details>
+    </div>
+  </template>
+
+  <template id="practice-layout">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">制作ノート</h2>
+    </header>
+    <div class="practice-width-controls" role="group" aria-label="プレビューの幅" data-practice-part="widths">
+      <button type="button" class="outline-button" data-preview-width="260" aria-pressed="true">260px</button>
+      <button type="button" class="outline-button" data-preview-width="440" aria-pressed="false">440px</button>
+      <button type="button" class="outline-button" data-preview-width="620" aria-pressed="false">620px</button>
+    </div>
+    <p class="practice-status" id="article-layout-status" role="status"></p>
+    <p class="practice-status practice-scroll-hint" id="article-layout-hint" hidden>横にスクロールして残りの記事を表示できます。</p>
+    <div class="practice-preview-scroll" tabindex="0" role="region" aria-label="記事一覧プレビュー">
+      <div class="practice-preview-size">
+        <div class="practice-articles" data-practice-part="grid">
+          <article data-practice-part="article">
+            <span class="practice-article-icon" data-icon="layout"></span>
+            <h3>余白を揃える</h3>
+            <p>カード一覧の見出しを整える工夫。</p>
+          </article>
+          <article data-practice-part="article">
+            <span class="practice-article-icon" data-icon="type"></span>
+            <h3>読みやすい文字</h3>
+            <p>本文と補足の大きさを決めます。</p>
+          </article>
+          <article data-practice-part="article">
+            <span class="practice-article-icon" data-icon="grid"></span>
+            <h3>列数を変える</h3>
+            <p>表示できる幅に合わせて記事を並べます。</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="practice-progress">
+    <header class="practice-sample-heading">
+      <h2 id="sample-title">サイトの公開準備</h2>
+    </header>
+    <div class="practice-progress" data-practice-part="progress">
+      <label for="publish-progress">公開準備の進捗</label>
+      <progress id="publish-progress" value="0" max="3"></progress>
+      <p class="practice-status" id="publish-status" role="status">3件中0件が完了</p>
+    </div>
+    <fieldset class="practice-task-group" data-practice-part="group">
+      <legend>公開前の確認</legend>
+      <label class="practice-check" data-practice-part="checks"><input type="checkbox">リンクを確認した</label>
+      <label class="practice-check" data-practice-part="checks"><input type="checkbox">スマートフォンで表示を確認した</label>
+      <label class="practice-check" data-practice-part="checks"><input type="checkbox">画像の代替テキストを確認した</label>
+    </fieldset>
+    <button class="text-button" id="reset-tasks" type="button">チェックをリセット</button>
+  </template>
+</body>
+</html>
