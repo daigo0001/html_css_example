@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="Web Notesの更新内容、登録日、バージョンとコミットを確認できます。">
+  <title>リリースノート — Web Notes</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <script src="./assets/theme.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/themes.css">
+  <link rel="stylesheet" href="./assets/release-notes.css">
+  <script type="module" src="./assets/release-notes.js"></script>
+</head>
+<body class="release-page">
+  <a class="skip-link" href="#release-main">更新履歴へスキップ</a>
+  <header class="topbar">
+    <a class="quiet-button release-back" href="./"><span data-icon="arrow-left"></span>カード図鑑に戻る</a>
+    <span class="topbar-title">Web Notes</span>
+  </header>
+  <main id="release-main">
+    <header class="section-heading">
+      <h1>リリースノート</h1>
+      <p>登録日はコミット日時を日本時間で表示しています。</p>
+    </header>
+    <p id="release-status" class="release-status" role="status" hidden></p>
+    <ol id="release-list" class="release-list" role="list" hidden></ol>
+    <noscript><p>更新履歴を表示するには JavaScript を有効にしてください。</p></noscript>
+  </main>
+
+  <template id="release-entry">
+    <li class="release-entry">
+      <dl class="release-fields">
+        <div class="release-version">
+          <dt>バージョン</dt>
+          <dd data-version></dd>
+        </div>
+        <div class="release-date">
+          <dt>登録日</dt>
+          <dd><time data-date></time></dd>
+        </div>
+        <div class="release-changes">
+          <dt>更新内容</dt>
+          <dd data-changes></dd>
+        </div>
+        <div class="release-commit">
+          <dt>コミットハッシュ</dt>
+          <dd><a data-commit-link><code data-commit></code></a></dd>
+        </div>
+      </dl>
+    </li>
+  </template>
+</body>
+</html>

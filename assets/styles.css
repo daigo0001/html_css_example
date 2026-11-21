@@ -445,6 +445,7 @@ main { max-width: 94rem; margin-inline: auto; padding: 2.25rem var(--gutter) 0; 
 }
 .footer-brand { font-weight: 700; color: var(--text); }
 .footer button { margin-inline-start: auto; }
+.footer-release { text-decoration: none; }
 .version { font: .75rem/1.5 var(--mono); }
 
 dialog {

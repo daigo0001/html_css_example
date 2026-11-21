@@ -217,7 +217,7 @@ test('テーマ変更後も検索とコード編集が動き、利用者向け�
   await page.locator('#close-playground').click();
   await expect(page.locator('#search')).toHaveValue('border-radius');
   await expect(page.locator('a[href*="github.com/daigo0001"]')).toHaveCount(0);
-  await expect(page.getByRole('link', { name: 'リリースノート' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /リリースノート/ })).toHaveAttribute('href', './release-notes.html');
   await expect(page.locator('footer #app-version')).toHaveText(`v${version}`);
   await expect(page.locator('footer #app-version')).toBeVisible();
 });
